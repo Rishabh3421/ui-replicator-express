@@ -8,6 +8,7 @@ import RequirementsSection from "@/components/RequirementsSection";
 import TrustSection from "@/components/TrustSection";
 import ProcessTimelineSection from "@/components/ProcessTimelineSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <ProcessTimelineSection />
       <TestimonialsSection />
       <Footer />
+      <Chatbot />
     </div>
   );
 };

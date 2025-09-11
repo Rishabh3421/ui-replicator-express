@@ -46,6 +46,7 @@ const CountriesSection = () => {
                 size="sm" 
                 variant="outline"
                 className="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 text-accent border-accent hover:bg-accent hover:text-accent-foreground"
+                onClick={() => window.location.href = '/countries'}
               >
                 Learn More
               </Button>
@@ -54,8 +55,11 @@ const CountriesSection = () => {
         </div>
 
         <div className="text-center">
-          <Button className="bg-accent hover:bg-accent-dark text-accent-foreground px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl animate-pulse-glow">
-            Check Eligibility
+          <Button 
+            className="bg-accent hover:bg-accent-dark text-accent-foreground px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl animate-pulse-glow"
+            onClick={() => window.location.href = '/countries'}
+          >
+            Explore All Countries
           </Button>
         </div>
       </div>

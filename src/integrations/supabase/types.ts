@@ -14,7 +14,120 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      countries: {
+        Row: {
+          apply_url: string | null
+          avg_processing_time: string | null
+          best_places: Json | null
+          created_at: string
+          flag_emoji: string
+          hero_image: string | null
+          id: string
+          name: string
+          required_docs: string[] | null
+          short_blurb: string
+          slug: string
+          top_colleges: Json | null
+          updated_at: string
+          visa_types: string[] | null
+          why_choose: string[] | null
+        }
+        Insert: {
+          apply_url?: string | null
+          avg_processing_time?: string | null
+          best_places?: Json | null
+          created_at?: string
+          flag_emoji: string
+          hero_image?: string | null
+          id?: string
+          name: string
+          required_docs?: string[] | null
+          short_blurb: string
+          slug: string
+          top_colleges?: Json | null
+          updated_at?: string
+          visa_types?: string[] | null
+          why_choose?: string[] | null
+        }
+        Update: {
+          apply_url?: string | null
+          avg_processing_time?: string | null
+          best_places?: Json | null
+          created_at?: string
+          flag_emoji?: string
+          hero_image?: string | null
+          id?: string
+          name?: string
+          required_docs?: string[] | null
+          short_blurb?: string
+          slug?: string
+          top_colleges?: Json | null
+          updated_at?: string
+          visa_types?: string[] | null
+          why_choose?: string[] | null
+        }
+        Relationships: []
+      }
+      engagement: {
+        Row: {
+          country: string | null
+          created_at: string
+          event: string
+          id: string
+          user_data: Json | null
+          visa_type: string | null
+        }
+        Insert: {
+          country?: string | null
+          created_at?: string
+          event: string
+          id?: string
+          user_data?: Json | null
+          visa_type?: string | null
+        }
+        Update: {
+          country?: string | null
+          created_at?: string
+          event?: string
+          id?: string
+          user_data?: Json | null
+          visa_type?: string | null
+        }
+        Relationships: []
+      }
+      leads: {
+        Row: {
+          country: string | null
+          created_at: string
+          email: string
+          id: string
+          message: string | null
+          name: string
+          phone: string | null
+          visa_type: string | null
+        }
+        Insert: {
+          country?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          message?: string | null
+          name: string
+          phone?: string | null
+          visa_type?: string | null
+        }
+        Update: {
+          country?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string | null
+          name?: string
+          phone?: string | null
+          visa_type?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
