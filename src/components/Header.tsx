@@ -33,13 +33,11 @@ const Header = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 group">
-              <div className="bg-accent w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
-                <span className="text-accent-foreground font-bold text-lg">E</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold text-primary transition-colors duration-300 group-hover:text-accent">Easy World</span>
-                <span className="text-xs text-muted-foreground">Educational Consultant</span>
-              </div>
+              <img 
+                src="/lovable-uploads/0c5eb42a-7f1b-4596-acd8-a8b530e8e3ff.png" 
+                alt="Easy World Educational Consultant Logo" 
+                className="h-14 w-auto transition-all duration-300 group-hover:scale-105" 
+              />
             </Link>
 
             {/* Navigation */}
