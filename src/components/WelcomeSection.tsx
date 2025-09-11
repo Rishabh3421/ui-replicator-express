@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-import welcomeImage from "@/assets/welcome-consultation.jpg";
+import welcomeImage from "../public/md.jpg";
 
 const WelcomeSection = () => {
   return (

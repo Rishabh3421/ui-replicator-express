@@ -3,6 +3,9 @@ import { Card } from "@/components/ui/card";
 import jobVisaImage from "@/assets/job-visa.jpg";
 import businessVisaImage from "@/assets/business-visa.jpg";
 import studentVisaImage from "@/assets/student-visa.jpg";
+import prImmigrationImage from "@/assets/pr-immigration.jpg";
+import business from "@/assets/business.jpg";
+import family from "@/assets/family.jpg";
 
 const ServicesSection = () => {
   const services = [
@@ -24,22 +27,22 @@ const ServicesSection = () => {
       image: businessVisaImage,
       link: "/services/tourist-visa"
     },
-    {
-      title: "PR & Immigration",
-      description: "Permanent residency and immigration solutions",
-      image: studentVisaImage,
-      link: "/services/pr-visa"
-    },
+{
+  title: "PR & Immigration",
+  description: "Permanent residency and immigration solutions",
+  image: prImmigrationImage,
+  link: "/services/PR-Immigration"
+},
     {
       title: "Business & Investor",
       description: "Business and investment visa programs",
-      image: businessVisaImage,
+      image: business,
       link: "/services/business-visa"
     },
     {
       title: "Family & Dependent",
       description: "Family reunification and dependent visas",
-      image: jobVisaImage,
+      image: family,
       link: "/services/family-visa"
     }
   ];
