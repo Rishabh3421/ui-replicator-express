@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import EnquiryForm from "@/components/EnquiryForm";
+import CountryHighlights from "@/components/CountryHighlights";
 import { ArrowLeft, MapPin, Clock, CheckCircle, MessageCircle, Mail } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 
@@ -119,23 +120,48 @@ const CountryDetail = () => {
         <div className="flex-1">
           {/* Hero Section */}
           <section className="mb-12">
-            <div className="bg-gradient-to-r from-primary to-primary-dark rounded-2xl p-8 text-white">
-              <div className="flex items-center gap-6">
-                <div className="text-8xl">{country.flag_emoji}</div>
-                <div>
-                  <h1 className="text-4xl lg:text-5xl font-bold mb-4">{country.name}</h1>
-                  <p className="text-xl text-white/90 mb-6">{country.short_blurb}</p>
-                  <Button 
-                    size="lg" 
-                    className="bg-white text-primary hover:bg-white/90"
-                    onClick={handleApply}
-                  >
-                    Apply Now
-                  </Button>
+            <div className="bg-gradient-to-r from-primary to-primary-dark rounded-2xl overflow-hidden">
+              <div className="relative">
+                {/* Background Image */}
+                {country.hero_image && (
+                  <div className="absolute inset-0 bg-black/40">
+                    <img 
+                      src={country.hero_image} 
+                      alt={`${country.name} landscape`}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary-dark/80"></div>
+                  </div>
+                )}
+                
+                <div className="relative p-8 text-white min-h-[300px] flex items-center">
+                  <div className="flex items-center gap-6 w-full">
+                    <div className="text-8xl">{country.flag_emoji}</div>
+                    <div className="flex-1">
+                      <h1 className="text-4xl lg:text-5xl font-bold mb-4">{country.name}</h1>
+                      <p className="text-xl text-white/90 mb-6">{country.short_blurb}</p>
+                      <Button 
+                        size="lg" 
+                        className="bg-white text-primary hover:bg-white/90"
+                        onClick={handleApply}
+                      >
+                        Apply Now
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
+
+          {/* Country Highlights */}
+          <CountryHighlights 
+            name={country.name}
+            flag_emoji={country.flag_emoji}
+            visa_types={country.visa_types}
+            avg_processing_time={country.avg_processing_time}
+            hero_image={country.hero_image}
+          />
 
           {/* Why Choose Section */}
           <section className="mb-12">
@@ -155,22 +181,27 @@ const CountryDetail = () => {
             <section className="mb-12">
               <h2 className="text-3xl font-bold text-primary mb-6">Top Colleges/Universities</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {country.top_colleges.map((college, index) => (
-                  <Card key={index} className="hover:shadow-lg transition-shadow">
-                    <CardContent className="p-6">
-                      <h3 className="font-semibold text-primary mb-2">{college.name}</h3>
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <MapPin className="h-4 w-4" />
-                        <span>{college.city}</span>
-                        {college.rank && (
-                          <Badge variant="secondary" className="ml-auto">
-                            #{college.rank}
-                          </Badge>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                 {country.top_colleges.map((college: any, index: number) => (
+                   <Card key={index} className="hover:shadow-lg transition-shadow">
+                     <CardContent className="p-6">
+                       <div className="flex items-start justify-between mb-3">
+                         <h3 className="font-semibold text-primary flex-1">{college.name}</h3>
+                         {college.rank && (
+                           <Badge variant="secondary" className="ml-2">
+                             #{college.rank}
+                           </Badge>
+                         )}
+                       </div>
+                       <div className="flex items-center gap-2 text-muted-foreground mb-2">
+                         <MapPin className="h-4 w-4" />
+                         <span className="text-sm">{college.city}</span>
+                       </div>
+                       {college.description && (
+                         <p className="text-sm text-muted-foreground">{college.description}</p>
+                       )}
+                     </CardContent>
+                   </Card>
+                 ))}
               </div>
             </section>
           )}
@@ -180,17 +211,20 @@ const CountryDetail = () => {
             <section className="mb-12">
               <h2 className="text-3xl font-bold text-primary mb-6">Best Places to Live/Study</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {country.best_places.map((place, index) => (
-                  <Card key={index} className="hover:shadow-lg transition-shadow">
-                    <CardContent className="p-6">
-                      <h3 className="font-semibold text-primary mb-2">{place.name}</h3>
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <MapPin className="h-4 w-4" />
-                        <span>{place.city}</span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                 {country.best_places.map((place: any, index: number) => (
+                   <Card key={index} className="hover:shadow-lg transition-shadow">
+                     <CardContent className="p-6">
+                       <h3 className="font-semibold text-primary mb-2">{place.name}</h3>
+                       <div className="flex items-center gap-2 text-muted-foreground mb-2">
+                         <MapPin className="h-4 w-4" />
+                         <span className="text-sm">{place.city}</span>
+                       </div>
+                       {place.description && (
+                         <p className="text-sm text-muted-foreground">{place.description}</p>
+                       )}
+                     </CardContent>
+                   </Card>
+                 ))}
               </div>
             </section>
           )}

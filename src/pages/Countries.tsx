@@ -164,8 +164,18 @@ const Countries = () => {
                     onClick={() => handleCountryClick(country.slug)}
                   >
                     <CardHeader className="text-center pb-4">
-                      <div className="text-6xl mb-4 group-hover:animate-bounce-gentle transition-all duration-300 group-hover:scale-110">
-                        {country.flag_emoji}
+                      {/* Flag Image */}
+                      <div className="w-full h-32 mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center relative">
+                        <div className="text-6xl group-hover:animate-bounce-gentle transition-all duration-300 group-hover:scale-110">
+                          {country.flag_emoji}
+                        </div>
+                        {country.hero_image && (
+                          <img 
+                            src={country.hero_image} 
+                            alt={`${country.name} landscape`}
+                            className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                          />
+                        )}
                       </div>
                       <h3 className="text-2xl font-bold text-primary group-hover:text-accent transition-colors duration-300">
                         {country.name}
