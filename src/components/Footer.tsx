@@ -111,7 +111,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* WhatsApp Chat Button */}
+        {/* WhatsApp Chat Button
         <div className="fixed bottom-6 right-6 z-50">
           <a 
             href="https://wa.me/919050519168" 
@@ -121,7 +121,7 @@ const Footer = () => {
           >
             <span className="text-2xl">💬</span>
           </a>
-        </div>
+        </div> */}
 
         {/* Bottom Copyright */}
         <div className="border-t border-footer-foreground/20 mt-12 pt-6 text-center">
