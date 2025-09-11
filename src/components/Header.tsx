@@ -8,16 +8,16 @@ const Header = () => {
       {/* Top Bar */}
       <div className="bg-header-bg text-header-foreground py-2 text-sm">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-2">
-              <Mail className="w-4 h-4" />
-              <span>truvik@yourdomain.com</span>
+            <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-2">
+                <Mail className="w-4 h-4" />
+                <span>mdeasyworld@gmail.com</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Phone className="w-4 h-4" />
+                <span>Call Us: 9050519168, 8950023501</span>
+              </div>
             </div>
-            <div className="flex items-center space-x-2">
-              <Phone className="w-4 h-4" />
-              <span>Call Us: +000 123 123 21</span>
-            </div>
-          </div>
           <div className="flex items-center space-x-4">
             <span>Instagram</span>
             <span>Facebook</span>
@@ -32,22 +32,24 @@ const Header = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-accent w-8 h-8 rounded-full flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-sm">T</span>
+            <Link to="/" className="flex items-center space-x-3 group">
+              <div className="bg-accent w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                <span className="text-accent-foreground font-bold text-lg">E</span>
               </div>
-              <span className="text-2xl font-bold text-primary">Truvik</span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-primary transition-colors duration-300 group-hover:text-accent">Easy World</span>
+                <span className="text-xs text-muted-foreground">Educational Consultant</span>
+              </div>
             </Link>
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Link to="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
-              <Link to="/pages" className="text-foreground hover:text-primary transition-colors">Pages</Link>
-              <Link to="/visa" className="text-foreground hover:text-primary transition-colors">Visa</Link>
-              <Link to="/coaching" className="text-foreground hover:text-primary transition-colors">Coaching</Link>
-              <Link to="/country" className="text-foreground hover:text-primary transition-colors">Country</Link>
-              <Link to="/blog" className="text-foreground hover:text-primary transition-colors">Blog</Link>
-              <Link to="/contact" className="text-foreground hover:text-primary transition-colors">Contact Us</Link>
+              <Link to="/" className="text-foreground hover:text-accent transition-all duration-300 hover:scale-105 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">Home</Link>
+              <Link to="/about" className="text-foreground hover:text-accent transition-all duration-300 hover:scale-105 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">About</Link>
+              <Link to="/services" className="text-foreground hover:text-accent transition-all duration-300 hover:scale-105 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">Services</Link>
+              <Link to="/country" className="text-foreground hover:text-accent transition-all duration-300 hover:scale-105 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">Countries</Link>
+              <Link to="/visa" className="text-foreground hover:text-accent transition-all duration-300 hover:scale-105 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">Requirements</Link>
+              <Link to="/contact" className="text-foreground hover:text-accent transition-all duration-300 hover:scale-105 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">Contact</Link>
             </nav>
 
             {/* Right Side */}
@@ -56,8 +58,8 @@ const Header = () => {
                 <Search className="w-4 h-4" />
                 <span className="text-sm">Search Here...</span>
               </div>
-              <Button className="bg-accent hover:bg-accent-dark text-accent-foreground">
-                Get A Quote
+              <Button className="bg-accent hover:bg-accent-dark text-accent-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg animate-pulse-glow">
+                Apply Now
               </Button>
             </div>
           </div>

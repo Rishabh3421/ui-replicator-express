@@ -3,11 +3,11 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import WelcomeSection from "@/components/WelcomeSection";
 import ServicesSection from "@/components/ServicesSection";
-import ImmigrationServicesSection from "@/components/ImmigrationServicesSection";
 import CountriesSection from "@/components/CountriesSection";
+import RequirementsSection from "@/components/RequirementsSection";
+import TrustSection from "@/components/TrustSection";
+import ProcessTimelineSection from "@/components/ProcessTimelineSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import StatsSection from "@/components/StatsSection";
-import NewsSection from "@/components/NewsSection";
 
 const Index = () => {
   return (
@@ -16,11 +16,11 @@ const Index = () => {
       <HeroSection />
       <WelcomeSection />
       <ServicesSection />
-      <ImmigrationServicesSection />
       <CountriesSection />
+      <RequirementsSection />
+      <TrustSection />
+      <ProcessTimelineSection />
       <TestimonialsSection />
-      <StatsSection />
-      <NewsSection />
       <Footer />
     </div>
   );
