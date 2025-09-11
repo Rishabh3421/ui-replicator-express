@@ -9,6 +9,7 @@ import TrustSection from "@/components/TrustSection";
 import ProcessTimelineSection from "@/components/ProcessTimelineSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Chatbot from "@/components/Chatbot";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
       <ProcessTimelineSection />
       <TestimonialsSection />
       <Footer />
+      <WhatsAppButton />
       <Chatbot />
     </div>
   );

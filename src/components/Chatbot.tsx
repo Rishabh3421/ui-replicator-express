@@ -266,7 +266,7 @@ const Chatbot = () => {
       {!isOpen && (
         <Button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg z-50 bg-accent hover:bg-accent-dark"
+          className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg z-40 bg-accent hover:bg-accent-dark"
           size="icon"
         >
           <MessageCircle className="h-6 w-6" />
@@ -275,7 +275,7 @@ const Chatbot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-6 right-6 w-80 h-96 shadow-xl z-50 flex flex-col">
+        <Card className="fixed bottom-6 right-6 w-80 h-[500px] shadow-xl z-40 flex flex-col max-h-[80vh]">
           <CardHeader className="bg-accent text-accent-foreground rounded-t-lg p-4">
             <CardTitle className="flex items-center justify-between text-lg">
               <span>Ask Easy World</span>
