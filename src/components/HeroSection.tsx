@@ -74,7 +74,7 @@ const HeroSection = () => {
           </div>
           
           <div className="relative animate-fade-in-right lg:justify-self-end">
-            <div className="bg-white/15 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 max-w-md w-full">
+            <div className="bg-white/15 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 w-full lg:w-2/5">
               <h3 className="text-2xl font-semibold mb-6 text-center text-white">Quick Enquiry</h3>
               <form className="space-y-4">
                 <Input 
