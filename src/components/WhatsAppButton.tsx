@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
 
 const WhatsAppButton = () => {
   const number = "919050519168"; // country code + number (India = 91)
@@ -20,7 +19,12 @@ const WhatsAppButton = () => {
       title="Chat on WhatsApp - Get instant assistance"
       aria-label="Chat on WhatsApp"
     >
-      <MessageCircle className="h-8 w-8" />
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+        alt="WhatsApp"
+        className="h-8 w-8"
+        loading="lazy"
+      />
     </Button>
   );
 };
