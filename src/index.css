@@ -78,9 +78,9 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Custom Font Variables */
-    --font-sans: 'Inter', system-ui, sans-serif;
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'Poppins', sans-serif;
+    --font-sans: 'Gilroy', 'Inter', system-ui, sans-serif;
+    --font-display: 'Gilroy', serif;
+    --font-body: 'Gilroy', sans-serif;
   }
 
   .dark {

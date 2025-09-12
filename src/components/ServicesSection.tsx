@@ -89,7 +89,7 @@ const ServicesSection = () => {
                   className="text-primary border-primary hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300 hover:scale-105"
                   asChild
                 >
-                  <Link to="/services">
+                  <Link to={`/services/${service.link.split('/services/')[1]}`}>
                     Explore More
                   </Link>
                 </Button>
