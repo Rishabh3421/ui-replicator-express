@@ -76,10 +76,9 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
                 transform="scale(2)"
                 initial={{ offsetDistance: "0%" }}
                 animate={{ offsetDistance: "100%" }}
-                transition={{
+transition={{
                   duration: 2.5,
-                  delay: 0.5,
-                  ease: "easeInOut"
+                  delay: 0.5
                 }}
                 style={{
                   offsetPath: "path('M100,400 Q300,200 600,300 T1100,400')",
@@ -98,10 +97,9 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
               strokeDasharray="10,5"
               initial={{ pathLength: 0 }}
               animate={{ pathLength: 1 }}
-              transition={{
+transition={{
                 duration: 2.5,
-                delay: 0.5,
-                ease: "easeInOut"
+                delay: 0.5
               }}
             />
           </svg>
@@ -109,9 +107,9 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
           {/* Company text */}
           <div className="relative z-10 text-center">
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 3, duration: 0.8, ease: "easeOut" }}
+              transition={{ delay: 3, duration: 0.8 }}
               className="text-white"
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-4">

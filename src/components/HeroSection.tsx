@@ -21,23 +21,25 @@ import heroAirport from "@/assets/hero-airport.jpg";
 import heroDocuments from "@/assets/hero-documents.jpg";
 import heroStudents from "@/assets/hero-students.jpg";
 
+const EASE_OUT: [number, number, number, number] = [0, 0, 0.2, 1];
+
 const textParent = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut", when: "beforeChildren", staggerChildren: 0.12 },
+    transition: { duration: 0.6, when: "beforeChildren", staggerChildren: 0.12 },
   },
 };
 
 const textChild = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
 };
 
 const cardSlideIn = {
   hidden: { opacity: 0, x: 60 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.15 } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, delay: 0.15 } },
 };
 
 const indicatorsFade = {

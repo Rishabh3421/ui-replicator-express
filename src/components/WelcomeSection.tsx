@@ -8,28 +8,28 @@ const parentStagger = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut", when: "beforeChildren", staggerChildren: 0.12 },
+    transition: { duration: 0.6, when: "beforeChildren", staggerChildren: 0.12 },
   },
 };
 
 const child = {
   hidden: { opacity: 0, y: 18 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
 const imageWrap = {
   hidden: { opacity: 0, y: 24, scale: 0.98 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.65, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.65 } },
 };
 
 const smallLag = (d = 0.15) => ({
   hidden: { opacity: 0, y: 12 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut", delay: d } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.45, delay: d } },
 });
 
 const feature = {
   hidden: { opacity: 0, y: 12 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
 
 const WelcomeSection = () => {
