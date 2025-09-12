@@ -109,7 +109,7 @@ const CountriesSection = () => {
                       className="w-full bg-white/20 backdrop-blur-sm text-white border-white/20 hover:bg-white hover:text-primary"
                       asChild
                     >
-                      <Link to="/countries">
+                      <Link to={`/countries/${country.slug}`}>
                         Learn More
                       </Link>
                     </Button>

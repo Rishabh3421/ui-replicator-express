@@ -24,7 +24,7 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6 }}
-          className="fixed inset-0 z-50 bg-gradient-to-br from-primary to-accent flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center"
         >
           <div className="text-center">
             {/* Logo */}
