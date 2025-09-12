@@ -34,6 +34,22 @@ const CountryDetail = () => {
   const [showEnquiry, setShowEnquiry] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  // Fallback country images
+  const countryImages: { [key: string]: string } = {
+    canada: "https://images.unsplash.com/photo-1530025809667-1f4bcff8e60f?q=80&w=1691&auto=format&fit=crop",
+    australia: "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1633&auto=format&fit=crop",
+    "new-zealand": "https://images.unsplash.com/photo-1683712922661-71b6f671ac25?q=80&w=1170&auto=format&fit=crop",
+    usa: "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=1499&auto=format&fit=crop",
+    uk: "https://images.unsplash.com/photo-1464021025634-49b81a77a858?q=80&w=1170&auto=format&fit=crop",
+    europe: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1170&auto=format&fit=crop",
+    japan: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=1170&auto=format&fit=crop",
+    singapore: "https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1171&auto=format&fit=crop"
+  };
+
+  const getCountryImage = () => {
+    return country?.hero_image || countryImages[slug || ''] || countryImages.canada;
+  };
+
   useEffect(() => {
     if (slug) {
       fetchCountry();
@@ -122,17 +138,15 @@ const CountryDetail = () => {
           <section className="mb-12">
             <div className="bg-gradient-to-r from-primary to-primary-dark rounded-2xl overflow-hidden">
               <div className="relative">
-                {/* Background Image */}
-                {country.hero_image && (
-                  <div className="absolute inset-0 bg-black/40">
-                    <img 
-                      src={country.hero_image} 
-                      alt={`${country.name} landscape`}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary-dark/80"></div>
-                  </div>
-                )}
+                {/* Background Image - Always show */}
+                <div className="absolute inset-0">
+                  <img 
+                    src={getCountryImage()}
+                    alt={`${country.name} landscape`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary-dark/80"></div>
+                </div>
                 
                 <div className="relative p-8 text-white min-h-[300px] flex items-center">
                   <div className="flex items-center gap-6 w-full">

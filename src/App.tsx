@@ -44,6 +44,10 @@ const App = () => {
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
+    // Clear session storage to always show intro for testing
+    // sessionStorage.removeItem('hasSeenIntro');
+    
+    // Check if intro was already seen
     const hasSeenIntro = sessionStorage.getItem('hasSeenIntro');
     if (hasSeenIntro) {
       setShowIntro(false);
