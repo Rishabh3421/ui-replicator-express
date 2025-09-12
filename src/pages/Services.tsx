@@ -3,10 +3,14 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import jobVisaImage from "@/assets/job-visa.jpg";
 import businessVisaImage from "@/assets/business-visa.jpg";
 import studentVisaImage from "@/assets/student-visa.jpg";
+import prImmigrationImage from "@/assets/PR-Immigration.jpg";
+import business from "@/assets/business.jpg";
+import family from "@/assets/family.jpg";
 
 const slugify = (str: string) =>
   str.toLowerCase().replace(/&/g, "and").replace(/[^\w\s-]/g, "").trim().replace(/\s+/g, "-");
@@ -14,102 +18,126 @@ const slugify = (str: string) =>
 const Services = () => {
   const services = [
     {
-      title: "Job Visa",
-      image: jobVisaImage,
-      description: "Professional job visa services for skilled workers",
-    },
-    {
-      title: "Business Visa",
-      image: businessVisaImage,
-      description: "Business visa solutions for entrepreneurs and investors",
-    },
-    {
-      title: "Diplomatic Visa",
+      title: "Student Visa",
+      description: "Study abroad programs and student visa assistance",
       image: studentVisaImage,
-      description: "Diplomatic visa services for official government business",
+      link: "/services/student-visa"
     },
     {
-      title: "Worker Visa",
+      title: "Work Visa",
+      description: "Professional work permits and employment visas",
       image: jobVisaImage,
-      description: "Worker visa assistance for employment opportunities",
+      link: "/services/work-visa"
     },
     {
-      title: "Free Visa Enquiry",
+      title: "Tourist & Visitor",
+      description: "Tourism and visitor visa services",
       image: businessVisaImage,
-      description: "Free consultation and visa enquiry services",
+      link: "/services/tourist-visa"
     },
     {
-      title: "Student Visas",
-      image: studentVisaImage,
-      description: "Student visa services for educational opportunities abroad",
+      title: "PR & Immigration",
+      description: "Permanent residency and immigration solutions",
+      image: prImmigrationImage,
+      link: "/services/PR-Immigration"
     },
-  ].map((s) => ({ ...s, link: `/services/${slugify(s.title)}` }));
+    {
+      title: "Business & Investor",
+      description: "Business and investment visa programs",
+      image: business,
+      link: "/services/business-visa"
+    },
+    {
+      title: "Family & Dependent",
+      description: "Family reunification and dependent visas",
+      image: family,
+      link: "/services/family-visa"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
       {/* Services Grid */}
-      <div className="py-16">
+      <div className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="text-accent font-semibold text-sm uppercase tracking-wider mb-4">
-              What We Do
-            </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-primary leading-tight">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="text-accent font-semibold text-sm uppercase tracking-wider mb-4">What We Do</div>
+            <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
               Our Visa <span className="text-accent">Services</span>
             </h1>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
-              Comprehensive visa and immigration services tailored to your goals.
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Comprehensive visa and immigration services tailored to your specific needs and aspirations.
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card
-                key={service.title}
-                className="group overflow-hidden hover:shadow-2xl transition-all duration-500 border-0 shadow-soft bg-background hover:-translate-y-2"
-                style={{ animationDelay: `${index * 0.05}s` }}
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  {/* Hover gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  {/* Hover description */}
-                  <div className="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
-                    <p className="text-sm">{service.description}</p>
+                <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-500 border-0 shadow-soft bg-background hover:-translate-y-2">
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                      <p className="text-sm">{service.description}</p>
+                    </div>
                   </div>
-                </div>
-
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-primary mb-4 group-hover:text-accent transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <div className="h-1 w-12 bg-accent mx-auto mb-4 transition-all duration-300 group-hover:w-20" />
-                  <Button
-                    variant="outline"
-                    className="text-primary border-primary hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300 hover:scale-105"
-                    asChild
-                  >
-                    <Link to={service.link}>Explore More</Link>
-                  </Button>
-                </div>
-              </Card>
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-bold text-primary mb-4 group-hover:text-accent transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    <div className="h-1 w-12 bg-accent mx-auto mb-4 transition-all duration-300 group-hover:w-20"></div>
+                    <Button 
+                      variant="outline" 
+                      className="text-primary border-primary hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300 hover:scale-105"
+                      asChild
+                    >
+                      <Link to={`/services/${service.link.split('/services/')[1]}`}>
+                        Explore More
+                      </Link>
+                    </Button>
+                  </div>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Replacement for Team Section: Why Choose Us + Process */}
-      <section className="py-16 bg-secondary">
+      {/* Why Choose Us + Process */}
+      <motion.section 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-16 bg-secondary"
+      >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Why Choose Us */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <div className="text-accent font-medium text-sm mb-3">WHY CHOOSE US</div>
               <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">
                 Trusted guidance from{" "}
@@ -137,18 +165,32 @@ const Services = () => {
                     desc: "From eligibility to post-landing—one partner for all stages.",
                     icon: "🤝",
                   },
-                ].map((f) => (
-                  <Card key={f.title} className="p-5 border-0 shadow-soft bg-background">
-                    <div className="text-2xl">{f.icon}</div>
-                    <h3 className="mt-3 font-semibold text-primary">{f.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">{f.desc}</p>
-                  </Card>
+                ].map((f, index) => (
+                  <motion.div
+                    key={f.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <Card className="p-5 border-0 shadow-soft bg-background">
+                      <div className="text-2xl">{f.icon}</div>
+                      <h3 className="mt-3 font-semibold text-primary">{f.title}</h3>
+                      <p className="text-sm text-muted-foreground mt-1">{f.desc}</p>
+                    </Card>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Simple Process */}
-            <div className="bg-primary text-primary-foreground rounded-2xl p-8">
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-primary text-primary-foreground rounded-2xl p-8"
+            >
               <div className="text-accent font-medium text-sm mb-2">OUR PROCESS</div>
               <h3 className="text-2xl font-bold mb-6">
                 A clear path from enquiry to approval
@@ -175,27 +217,41 @@ const Services = () => {
                     title: "Post-Landing Support",
                     text: "Accommodation tips, insurance, banking, and next-steps.",
                   },
-                ].map((s) => (
-                  <li key={s.step} className="flex items-start gap-4">
+                ].map((s, index) => (
+                  <motion.li 
+                    key={s.step}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex items-start gap-4"
+                  >
                     <span className="font-bold text-accent">{s.step}</span>
                     <div>
                       <div className="font-semibold">{s.title}</div>
                       <div className="text-sm opacity-90">{s.text}</div>
                     </div>
-                  </li>
+                  </motion.li>
                 ))}
               </ol>
 
-              <Button
-                className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90"
-                asChild
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                viewport={{ once: true }}
               >
-                <Link to="/contact">Book Free Consultation</Link>
-              </Button>
-            </div>
+                <Button
+                  className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90"
+                  asChild
+                >
+                  <Link to="/contact">Book Free Consultation</Link>
+                </Button>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </div>

@@ -9,6 +9,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Search, ArrowRight } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 interface Country {
   id: string;
@@ -27,6 +29,58 @@ const Countries = () => {
   const [selectedVisaType, setSelectedVisaType] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+
+  // Fallback countries data if database is empty
+  const fallbackCountries = [
+    {
+      name: "🇨🇦 Canada",
+      image: "https://images.unsplash.com/photo-1530025809667-1f4bcff8e60f?q=80&w=1691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Study, work, PR opportunities",
+      slug: "canada",
+    },
+    {
+      name: "🇦🇺 Australia",
+      image: "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1633&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "High-quality education & skilled migration",
+      slug: "australia",
+    },
+    {
+      name: "🇳🇿 New Zealand",
+      image: "https://images.unsplash.com/photo-1683712922661-71b6f671ac25?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Student & work-friendly destination",
+      slug: "new-zealand",
+    },
+    {
+      name: "🇺🇸 USA",
+      image: "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=1499&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Leading universities & career paths",
+      slug: "usa",
+    },
+    {
+      name: "🇬🇧 UK",
+      image: "https://images.unsplash.com/photo-1464021025634-49b81a77a858?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Affordable study & job prospects",
+      slug: "uk",
+    },
+    {
+      name: "🇪🇺 Europe",
+      image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Multiple countries, endless opportunities",
+      slug: "europe",
+    },
+    {
+      name: "🇯🇵 Japan",
+      image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Growing hub for careers & education",
+      slug: "japan",
+    },
+    {
+      name: "🇸🇬 Singapore",
+      image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Global business & study gateway",
+      slug: "singapore",
+    },
+  ];
 
   const allVisaTypes = ["Student", "Work", "PR", "Tourist", "Business", "Family"];
 
@@ -87,141 +141,98 @@ const Countries = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-primary-dark py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-            Study & Work Destinations
-          </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Explore visa opportunities across top global destinations for education, work, and settlement.
-          </p>
-        </div>
-      </section>
-
-      {/* Search and Filters */}
-      <section className="py-12 bg-secondary/20">
+      <motion.section 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="py-20 bg-secondary"
+      >
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            {/* Search */}
-            <div className="relative mb-8">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
-              <Input
-                placeholder="Search countries..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 h-12 text-lg"
-              />
-            </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-center mb-16"
+          >
+            <div className="text-accent font-semibold text-sm uppercase tracking-wider mb-4">Countries We Offer</div>
+            <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
+              Immigration & visa services <br />
+              following <span className="text-accent">Countries</span>
+            </h1>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Explore visa opportunities across top global destinations for education, work, and settlement.
+            </p>
+          </motion.div>
+        </div>
+      </motion.section>
 
-            {/* Visa Type Filters */}
-            <div className="flex flex-wrap gap-3 justify-center">
-              <Button
-                variant={selectedVisaType === null ? "default" : "outline"}
-                onClick={() => setSelectedVisaType(null)}
-                size="sm"
+      {/* Countries Grid using fallback data styled like home page */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            {fallbackCountries.map((country, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
               >
-                All Visas
-              </Button>
-              {allVisaTypes.map((type) => (
-                <Button
-                  key={type}
-                  variant={selectedVisaType === type ? "default" : "outline"}
-                  onClick={() => setSelectedVisaType(type)}
-                  size="sm"
-                >
-                  {type}
-                </Button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Countries Grid */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          {loading ? (
-            <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
-              <p className="mt-4 text-muted-foreground">Loading countries...</p>
-            </div>
-          ) : (
-            <>
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-primary mb-4">
-                  Choose Your Destination
-                </h2>
-                <p className="text-lg text-muted-foreground">
-                  {filteredCountries.length} {filteredCountries.length === 1 ? 'country' : 'countries'} found
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredCountries.map((country) => (
-                  <Card
-                    key={country.id}
-                    className="group cursor-pointer hover:shadow-xl transition-all duration-300 border-0 shadow-soft bg-background hover:-translate-y-2"
-                    onClick={() => handleCountryClick(country.slug)}
-                  >
-                    <CardHeader className="text-center pb-4">
-                      {/* Flag Image */}
-                      <div className="w-full h-32 mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center relative">
-                        <div className="text-6xl group-hover:animate-bounce-gentle transition-all duration-300 group-hover:scale-110">
-                          {country.flag_emoji}
-                        </div>
-                        {country.hero_image && (
-                          <img 
-                            src={country.hero_image} 
-                            alt={`${country.name} landscape`}
-                            className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300"
-                          />
-                        )}
+                <Card className="group relative overflow-hidden rounded-2xl border-0 shadow-soft hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer">
+                  <div className="relative h-48 overflow-hidden">
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                      style={{
+                        backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('${country.image}')`
+                      }}
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center text-white">
+                        <h3 className="text-2xl font-bold mb-2 group-hover:text-accent transition-colors duration-300">
+                          {country.name}
+                        </h3>
+                        <p className="text-sm opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                          {country.description}
+                        </p>
                       </div>
-                      <h3 className="text-2xl font-bold text-primary group-hover:text-accent transition-colors duration-300">
-                        {country.name}
-                      </h3>
-                    </CardHeader>
-                    
-                    <CardContent>
-                      <p className="text-muted-foreground mb-4 min-h-[48px]">
-                        {country.short_blurb}
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {country.visa_types.slice(0, 3).map((type) => (
-                          <Badge key={type} variant="secondary" className="text-xs">
-                            {type}
-                          </Badge>
-                        ))}
-                        {country.visa_types.length > 3 && (
-                          <Badge variant="outline" className="text-xs">
-                            +{country.visa_types.length - 3} more
-                          </Badge>
-                        )}
-                      </div>
-
+                    </div>
+                    <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                       <Button 
-                        className="w-full group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300"
-                        size="lg"
+                        size="sm" 
+                        variant="secondary"
+                        className="w-full bg-white/20 backdrop-blur-sm text-white border-white/20 hover:bg-white hover:text-primary"
+                        asChild
                       >
-                        View Details
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        <Link to="/countries">
+                          Learn More
+                        </Link>
                       </Button>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
 
-              {filteredCountries.length === 0 && !loading && (
-                <div className="text-center py-12">
-                  <p className="text-xl text-muted-foreground mb-4">No countries found</p>
-                  <p className="text-muted-foreground">Try adjusting your search or filters</p>
-                </div>
-              )}
-            </>
-          )}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Button 
+              className="bg-accent hover:bg-accent-dark text-accent-foreground px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              asChild
+            >
+              <Link to="/contact">
+                Get Free Consultation
+              </Link>
+            </Button>
+          </motion.div>
         </div>
       </section>
+
 
       <Footer />
     </div>
