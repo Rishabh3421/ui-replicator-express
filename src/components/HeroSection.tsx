@@ -240,7 +240,7 @@ const HeroSection = () => {
       </div>
 
       {/* Slide indicators */}
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20"
         variants={indicatorsFade}
         initial="hidden"
@@ -255,7 +255,7 @@ const HeroSection = () => {
             }`}
           />
         ))}
-      </motion.div>
+      </motion.div> */}
 
       {/* Modal Apply Now form */}
       <Dialog open={showModal} onOpenChange={setShowModal}>

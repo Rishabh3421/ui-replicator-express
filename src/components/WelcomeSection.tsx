@@ -22,11 +22,6 @@ const imageWrap = {
   visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.65 } },
 };
 
-const smallLag = (d = 0.15) => ({
-  hidden: { opacity: 0, y: 12 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.45, delay: d } },
-});
-
 const feature = {
   hidden: { opacity: 0, y: 12 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
@@ -44,7 +39,7 @@ const WelcomeSection = () => {
     <div className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* LEFT: image + badges */}
+          {/* LEFT: image (never cropped on mobile) */}
           <motion.div
             className="relative"
             variants={imageWrap}
@@ -52,27 +47,26 @@ const WelcomeSection = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <img
-              src={welcomeImage}
-              alt="Easy World MD photo"
-              className="w-full h-auto rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl"
-            />
+            {/* Card wrapper for padding/rounding */}
+            <div className="rounded-2xl shadow-2xl bg-white p-4">
+              {/* Aspect box ensures full logo visibility; object-contain prevents cropping */}
+              <div className="aspect-square w-full">
+                <img
+                  src={welcomeImage}
+                  alt="Easy World MD logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
 
-            <motion.div
-              className="absolute top-6 left-6 bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold"
-              variants={smallLag(0.25)}
-            >
-              MD - Sahil Maan
-            </motion.div>
-
-            <motion.div
-              className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg"
-              variants={smallLag(0.35)}
-            >
-              <p className="text-primary font-medium italic text-center">
-                "At Easy World, we don't just process visas—we help build futures."
-              </p>
-            </motion.div>
+              {/* Quote: static below image on mobile; overlay on large screens */}
+              <div className="mt-4 lg:mt-0 lg:absolute lg:bottom-6 lg:left-6 lg:right-6">
+                <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                  <p className="text-primary font-medium italic text-center">
+                    "At Easy World, we don't just process visas—we help build futures."
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           {/* RIGHT: staggered text/content */}

@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import welcomeImage from "@/assets/MD.png";
+import Watermark from "@/assets/mddd.jpeg";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { motion } from "framer-motion";
 
@@ -15,7 +16,7 @@ const About = () => {
       <Header />
 
       {/* Intro Section */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -23,7 +24,7 @@ const About = () => {
       >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -36,29 +37,42 @@ const About = () => {
               />
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="space-y-6"
             >
-              <div className="text-accent font-medium text-sm">ABOUT EASY WORLD</div>
+              <img
+                src={Watermark} 
+                alt="Watermark logo"
+                className="absolute top-25 left-[40%] w-[50%] h-[50%] object-contain opacity-10 pointer-events-none select-none"
+              />
+              <div className="text-accent font-medium text-sm">
+                ABOUT EASY WORLD
+              </div>
               <h1 className="text-3xl lg:text-4xl font-bold text-primary">
                 Your trusted partner for{" "}
                 <span className="text-accent italic">visas & immigration</span>
               </h1>
 
               <p className="text-muted-foreground">
-                For over <strong>5 years</strong>, Easy World Educational Consultant has been
-                guiding students, professionals, and families toward global opportunities. We
-                provide transparent, end-to-end support with a focus on trust and results.
+                For over <strong>5 years</strong>, Easy World Educational
+                Consultant has been guiding students, professionals, and
+                families toward global opportunities. We provide transparent,
+                end-to-end support with a focus on trust and results.
               </p>
 
               <div className="rounded-lg bg-secondary p-4">
-                <div className="text-sm text-muted-foreground">Managing Director</div>
-                <div className="text-xl font-semibold text-primary">{MD_NAME}</div>
+                <div className="text-sm text-muted-foreground">
+                  Managing Director
+                </div>
+                <div className="text-xl font-semibold text-primary">
+                  {MD_NAME}
+                </div>
                 <p className="mt-2 text-muted-foreground">
-                  "At Easy World, we don't just process visas—we help build futures."
+                  "At Easy World, we don't just process visas—we help build
+                  futures."
                 </p>
               </div>
 
@@ -69,7 +83,7 @@ const About = () => {
                   "Personalized case reviews",
                   "Transparent & hassle-free process",
                 ].map((item, index) => (
-                  <motion.div 
+                  <motion.div
                     key={item}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -82,7 +96,7 @@ const About = () => {
                 ))}
               </div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
@@ -99,7 +113,7 @@ const About = () => {
       </motion.section>
 
       {/* Why Choose */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -113,7 +127,9 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="text-accent font-medium text-sm mb-3">WHY CHOOSE US</div>
+            <div className="text-accent font-medium text-sm mb-3">
+              WHY CHOOSE US
+            </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-10">
               Why choose <span className="text-accent italic">Easy World</span>?
             </h2>
@@ -123,18 +139,15 @@ const About = () => {
             {[
               {
                 title: "End-to-end guidance",
-                desc:
-                  "From profile assessment, documentation, and filing to final decision—we're with you at every step.",
+                desc: "From profile assessment, documentation, and filing to final decision—we're with you at every step.",
               },
               {
                 title: "Certified & experienced team",
-                desc:
-                  "A team of trained consultants with updated knowledge of immigration rules and country-specific requirements.",
+                desc: "A team of trained consultants with updated knowledge of immigration rules and country-specific requirements.",
               },
               {
                 title: "Multi-country coverage",
-                desc:
-                  "Canada, Australia, New Zealand, USA, UK, Europe, Japan, Singapore and more—choose what fits your goals.",
+                desc: "Canada, Australia, New Zealand, USA, UK, Europe, Japan, Singapore and more—choose what fits your goals.",
               },
             ].map((item, index) => (
               <motion.div
@@ -145,7 +158,9 @@ const About = () => {
                 viewport={{ once: true }}
               >
                 <Card className="p-6 border-0 shadow-soft">
-                  <h3 className="text-lg font-semibold text-primary mb-2">{item.title}</h3>
+                  <h3 className="text-lg font-semibold text-primary mb-2">
+                    {item.title}
+                  </h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
                 </Card>
               </motion.div>
