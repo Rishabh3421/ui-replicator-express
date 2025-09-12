@@ -16,8 +16,8 @@ interface Country {
   visa_types: string[];
   required_docs: string[];
   avg_processing_time: string;
-  top_colleges?: Array<{ name: string; city?: string; rank?: number }>;
-  best_places?: Array<{ name: string; city?: string }>;
+  top_colleges?: any;
+  best_places?: any;
 }
 
 interface ChatMessage {
