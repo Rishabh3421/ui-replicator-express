@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import jobVisaImage from "@/assets/job-visa.jpg";
 import businessVisaImage from "@/assets/business-visa.jpg";
 import studentVisaImage from "@/assets/student-visa.jpg";
-import prImmigrationImage from "@/assets/pr-immigration.jpg";
+import prImmigrationImage from "@/assets/PR-Immigration.jpg";
 import business from "@/assets/business.jpg";
 import family from "@/assets/family.jpg";
 
