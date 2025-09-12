@@ -18,6 +18,12 @@ import {
   Mail,
   MessageCircle
 } from "lucide-react";
+import studentVisaImage from "@/assets/student-visa.jpg";
+import jobVisaImage from "@/assets/job-visa.jpg";
+import businessVisaImage from "@/assets/business-visa.jpg";
+import prImmigrationImage from "@/assets/PR-Immigration.jpg";
+import businessImage from "@/assets/business.jpg";
+import familyImage from "@/assets/family.jpg";
 
 const ServiceDetail = () => {
   const { service } = useParams();
@@ -28,7 +34,7 @@ const ServiceDetail = () => {
     "student-visa": {
       title: "Student Visa Services",
       description: "Complete assistance for your study abroad journey with expert guidance and documentation support.",
-      image: "/src/assets/student-visa.jpg",
+      image: studentVisaImage,
       benefits: [
         "University selection guidance",
         "Application assistance",
@@ -52,7 +58,7 @@ const ServiceDetail = () => {
     "work-visa": {
       title: "Work Visa Services",
       description: "Professional work permits and employment visa assistance for global career opportunities.",
-      image: "/src/assets/job-visa.jpg",
+      image: jobVisaImage,
       benefits: [
         "Job search assistance",
         "Employer liaison",
@@ -76,7 +82,7 @@ const ServiceDetail = () => {
     "tourist-visa": {
       title: "Tourist & Visitor Visa",
       description: "Hassle-free tourist and visitor visa services for your perfect vacation or business trip.",
-      image: "/src/assets/business-visa.jpg",
+      image: businessVisaImage,
       benefits: [
         "Quick processing",
         "Document verification",
@@ -100,7 +106,7 @@ const ServiceDetail = () => {
     "PR-Immigration": {
       title: "PR & Immigration Services",
       description: "Comprehensive permanent residency and immigration solutions for your new life abroad.",
-      image: "/src/assets/PR-Immigration.jpg",
+      image: prImmigrationImage,
       benefits: [
         "Points assessment",
         "Profile optimization",
@@ -124,7 +130,7 @@ const ServiceDetail = () => {
     "business-visa": {
       title: "Business & Investor Visa",
       description: "Business and investment visa programs for entrepreneurs and investors seeking global opportunities.",
-      image: "/src/assets/business.jpg",
+      image: businessImage,
       benefits: [
         "Business plan development",
         "Investment guidance",
@@ -148,7 +154,7 @@ const ServiceDetail = () => {
     "family-visa": {
       title: "Family & Dependent Visa",
       description: "Family reunification and dependent visa services to bring your loved ones together.",
-      image: "/src/assets/family.jpg",
+      image: familyImage,
       benefits: [
         "Relationship verification",
         "Document authentication",
