@@ -5,54 +5,54 @@ import { Link } from "react-router-dom";
 
 const CountriesSection = () => {
   const countries = [
-    { 
-      name: "France", 
-      image: "/lovable-uploads/0129d08a-0d93-4380-8a93-062415c76d2e.png",
-      description: "Excellence in education and culture",
-      slug: "france"
+    {
+      name: "🇨🇦 Canada",
+      image: "https://images.unsplash.com/photo-1530025809667-1f4bcff8e60f?q=80&w=1691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Study, work, PR opportunities",
+      slug: "canada",
     },
-    { 
-      name: "United Kingdom", 
-      image: "/lovable-uploads/0129d08a-0d93-4380-8a93-062415c76d2e.png",
-      description: "Historic universities and innovation",
-      slug: "uk"
+    {
+      name: "🇦🇺 Australia",
+      image: "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1633&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "High-quality education & skilled migration",
+      slug: "australia",
     },
-    { 
-      name: "Australia", 
-      image: "/lovable-uploads/0129d08a-0d93-4380-8a93-062415c76d2e.png",
-      description: "Top universities and PR pathways",
-      slug: "australia"
+    {
+      name: "🇳🇿 New Zealand",
+      image: "https://images.unsplash.com/photo-1683712922661-71b6f671ac25?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Student & work-friendly destination",
+      slug: "new-zealand",
     },
-    { 
-      name: "New Zealand", 
-      image: "/lovable-uploads/0129d08a-0d93-4380-8a93-062415c76d2e.png",
-      description: "Quality education and lifestyle",
-      slug: "new-zealand"
+    {
+      name: "🇺🇸 USA",
+      image: "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=1499&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Leading universities & career paths",
+      slug: "usa",
     },
-    { 
-      name: "Italy", 
-      image: "/lovable-uploads/0129d08a-0d93-4380-8a93-062415c76d2e.png",
-      description: "Art, culture and education heritage",
-      slug: "italy"
+    {
+      name: "🇬🇧 UK",
+      image: "https://images.unsplash.com/photo-1464021025634-49b81a77a858?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Affordable study & job prospects",
+      slug: "uk",
     },
-    { 
-      name: "Russia", 
-      image: "/lovable-uploads/0129d08a-0d93-4380-8a93-062415c76d2e.png",
-      description: "Strong technical education system",
-      slug: "russia"
+    {
+      name: "🇪🇺 Europe",
+      image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Multiple countries, endless opportunities",
+      slug: "europe",
     },
-    { 
-      name: "India", 
-      image: "/lovable-uploads/0129d08a-0d93-4380-8a93-062415c76d2e.png",
-      description: "Emerging opportunities and growth",
-      slug: "india"
+    {
+      name: "🇯🇵 Japan",
+      image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Growing hub for careers & education",
+      slug: "japan",
     },
-    { 
-      name: "Canada", 
-      image: "/lovable-uploads/0129d08a-0d93-4380-8a93-062415c76d2e.png",
-      description: "World-class education system",
-      slug: "canada"
-    }
+    {
+      name: "🇸🇬 Singapore",
+      image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Global business & study gateway",
+      slug: "singapore",
+    },
   ];
 
   return (

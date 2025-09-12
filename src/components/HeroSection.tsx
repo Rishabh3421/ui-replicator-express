@@ -14,11 +14,36 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { motion } from "framer-motion";
 
 import heroAirplane from "@/assets/hero-airplane.jpg";
 import heroAirport from "@/assets/hero-airport.jpg";
 import heroDocuments from "@/assets/hero-documents.jpg";
 import heroStudents from "@/assets/hero-students.jpg";
+
+const textParent = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut", when: "beforeChildren", staggerChildren: 0.12 },
+  },
+};
+
+const textChild = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+};
+
+const cardSlideIn = {
+  hidden: { opacity: 0, x: 60 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.15 } },
+};
+
+const indicatorsFade = {
+  hidden: { opacity: 0, y: 8 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.4 } },
+};
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -105,19 +130,35 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 h-full flex items-center max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
-          {/* LEFT */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-medium">
+          {/* LEFT: animated text block */}
+          <motion.div
+            className="lg:col-span-5 space-y-8"
+            variants={textParent}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div
+              className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-medium"
+              variants={textChild}
+            >
               Managing Director: Ravi Kumar
-            </div>
-            <h1 className="text-white text-5xl lg:text-7xl font-bold leading-tight max-w-[18ch]">
+            </motion.div>
+
+            <motion.h1
+              variants={textChild}
+              className="text-white text-5xl lg:text-7xl font-bold leading-tight max-w-[18ch]"
+            >
               Anywhere You Want to <span className="text-accent">Be</span>
-            </h1>
-            <p className="text-white/90 text-xl lg:text-2xl leading-relaxed max-w-[54ch]">
+            </motion.h1>
+
+            <motion.p
+              variants={textChild}
+              className="text-white/90 text-xl lg:text-2xl leading-relaxed max-w-[54ch]"
+            >
               Study. Work. Travel. Settle Abroad with Confidence.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              {/* blinking animation with Tailwind keyframes */}
+            </motion.p>
+
+            <motion.div variants={textChild} className="flex flex-col sm:flex-row gap-4">
               <Button
                 onClick={() => setShowModal(true)}
                 className="bg-accent text-accent-foreground px-8 py-4 text-lg animate-pulse"
@@ -131,11 +172,16 @@ const HeroSection = () => {
               >
                 Free Consultation
               </Button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* RIGHT quick enquiry */}
-          <div className="lg:col-span-7 lg:justify-self-end">
+          {/* RIGHT: animated form card */}
+          <motion.div
+            className="lg:col-span-7 lg:justify-self-end"
+            variants={cardSlideIn}
+            initial="hidden"
+            animate="visible"
+          >
             <div className="w-full bg-white/15 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
               <h3 className="text-2xl font-semibold mb-6 text-center text-white">Quick Enquiry</h3>
 
@@ -187,12 +233,17 @@ const HeroSection = () => {
                 </div>
               </form>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Slide indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20"
+        variants={indicatorsFade}
+        initial="hidden"
+        animate="visible"
+      >
         {slides.map((_, i) => (
           <button
             key={i}
@@ -202,7 +253,7 @@ const HeroSection = () => {
             }`}
           />
         ))}
-      </div>
+      </motion.div>
 
       {/* Modal Apply Now form */}
       <Dialog open={showModal} onOpenChange={setShowModal}>

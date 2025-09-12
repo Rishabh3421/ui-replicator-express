@@ -144,9 +144,9 @@ const TestimonialsSection = () => {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <Button className="bg-accent hover:bg-accent-dark text-accent-foreground px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+          {/* <Button className="bg-accent hover:bg-accent-dark text-accent-foreground px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
             Read More Success Stories
-          </Button>
+          </Button> */}
         </motion.div>
       </div>
     </div>

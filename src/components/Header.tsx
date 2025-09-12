@@ -56,14 +56,14 @@ const Header = () => {
 
             {/* Right Side */}
             <div className="flex items-center space-x-4">
-              <Button 
+              {/* <Button 
                 variant="ghost" 
                 size="icon"
                 onClick={() => setIsEnquiryOpen(true)}
                 className="hidden md:flex items-center space-x-2 text-muted-foreground hover:text-accent"
               >
                 <Search className="w-4 h-4" />
-              </Button>
+              </Button> */}
               <Button 
                 onClick={() => setIsEnquiryOpen(true)}
                 className="hidden md:flex bg-accent hover:bg-accent-dark text-accent-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg"

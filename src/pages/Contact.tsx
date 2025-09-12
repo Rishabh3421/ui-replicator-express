@@ -13,7 +13,7 @@ const Contact = () => {
       <Header />
       
       {/* Page Header */}
-      <div className="bg-header-bg text-header-foreground py-16">
+      {/* <div className="bg-header-bg text-header-foreground py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
           <div className="flex items-center justify-center space-x-2 text-sm">
@@ -22,7 +22,7 @@ const Contact = () => {
             <span>Contact Us</span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Contact Form Section */}
       <div className="py-16">
@@ -129,7 +129,7 @@ const Contact = () => {
       </div>
 
       {/* Office Locations */}
-      <div className="py-16 bg-background">
+      {/* <div className="py-16 bg-background">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-primary mb-4">
             20+ Across worldwide <span className="text-accent italic">Branches</span>
@@ -171,7 +171,7 @@ const Contact = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       <Footer />
     </div>
