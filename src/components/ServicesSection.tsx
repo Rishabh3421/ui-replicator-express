@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import jobVisaImage from "@/assets/job-visa.jpg";
@@ -86,8 +87,11 @@ const ServicesSection = () => {
                 <Button 
                   variant="outline" 
                   className="text-primary border-primary hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300 hover:scale-105"
+                  asChild
                 >
-                  Explore More
+                  <Link to="/services">
+                    Explore More
+                  </Link>
                 </Button>
               </div>
             </Card>

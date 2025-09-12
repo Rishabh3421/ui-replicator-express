@@ -76,6 +76,11 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom Font Variables */
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
   }
 
   .dark {
@@ -124,5 +129,22 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
   }
 }

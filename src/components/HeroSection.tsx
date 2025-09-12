@@ -126,6 +126,7 @@ const HeroSection = () => {
               </Button>
               <Button
                 variant="outline"
+                onClick={() => setShowModal(true)}
                 className="border-2 border-white text-black hover:bg-white hover:text-primary px-8 py-4 text-lg"
               >
                 Free Consultation

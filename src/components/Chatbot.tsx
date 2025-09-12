@@ -403,9 +403,13 @@ const Chatbot = () => {
               ref={scrollerRef}
               className="
                 flex-1 overflow-y-auto p-4 space-y-3
-                scrollbar-thin scrollbar-thumb-muted-foreground/30 scrollbar-track-transparent
+                scrollbar-thin scrollbar-thumb-muted-foreground/30 scrollbar-track-muted/20
+                hover:scrollbar-thumb-muted-foreground/50
               "
-              style={{ scrollbarWidth: "thin" }}  // Firefox fallback if plugin not active
+              style={{ 
+                scrollbarWidth: "thin",
+                scrollbarColor: "hsl(var(--muted-foreground) / 0.3) transparent"
+              }}
             >
               {messages.map((message) => (
                 <div
