@@ -21,9 +21,9 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
     <AnimatePresence>
       {showAnimation && (
         <motion.div
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           className="fixed inset-0 z-50 bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center"
         >
           <div className="text-center">
