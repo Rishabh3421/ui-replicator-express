@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
-import welcomeImage from "../public/md.jpg";
+import welcomeImage from "../assets/mddd.jpeg";
 
 const parentStagger = {
   hidden: { opacity: 0, y: 24 },
@@ -62,7 +62,7 @@ const WelcomeSection = () => {
               className="absolute top-6 left-6 bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold"
               variants={smallLag(0.25)}
             >
-              MD - Ravi Kumar
+              MD - Sahil Maan
             </motion.div>
 
             <motion.div

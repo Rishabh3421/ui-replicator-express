@@ -3,11 +3,11 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-import welcomeImage from "@/assets/mdd (1).jpg";
+import welcomeImage from "@/assets/MD.png";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { motion } from "framer-motion";
 
-const MD_NAME = "Ravi Kumar";
+const MD_NAME = "Sahil Maan";
 
 const About = () => {
   return (
