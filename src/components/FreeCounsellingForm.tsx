@@ -122,15 +122,21 @@ const FreeCounsellingForm = ({ isOpen, onClose }: FreeCounsellingFormProps) => {
         return;
       }
 
-      // Submit to Supabase leads table  
+      // Submit to Supabase leads table with comprehensive data
       const { error } = await supabase.from("leads").insert([
         {
           name: formData.name,
           email: formData.email,
-          phone: formData.phone,
+          phone: `${formData.phoneCountryCode} ${formData.phone}`,
           country: formData.countryToImmigrate,
           visa_type: formData.visaType,
-          message: `Free Counselling Request - English Level: ${formData.englishLevel}, Age: ${formData.age}, Education: ${formData.education}, Experience: ${formData.experience}, From: ${formData.country}`
+          message: `FREE COUNSELLING REQUEST
+English Level: ${formData.englishLevel}
+Origin Country: ${formData.country}
+Age: ${formData.age}
+Education: ${formData.education}
+Experience: ${formData.experience}
+Form Type: counseling`
         },
       ]);
 

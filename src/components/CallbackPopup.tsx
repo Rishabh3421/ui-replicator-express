@@ -112,15 +112,19 @@ const CallbackPopup = ({ isOpen, onClose }: CallbackPopupProps) => {
         return;
       }
 
-      // Submit to Supabase leads table
+      // Submit to Supabase leads table with comprehensive data
       const { error } = await supabase.from("leads").insert([
         {
           name: formData.name,
           email: formData.email,
-          phone: formData.phone,
+          phone: `${formData.phoneCountryCode} ${formData.phone}`,
           country: formData.countryToImmigrate,
           visa_type: formData.visaType,
-          message: `Callback Request - English Level: ${formData.englishLevel}, Education: ${formData.education}, From: ${formData.country}`
+          message: `CALLBACK REQUEST
+English Level: ${formData.englishLevel}
+Origin Country: ${formData.country}
+Education: ${formData.education}
+Form Type: callback`
         },
       ]);
 
