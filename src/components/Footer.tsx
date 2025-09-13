@@ -68,16 +68,15 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="mt-6">
               <h4 className="font-semibold mb-2">Our Branches</h4>
               <div className="space-y-1 text-sm text-footer-foreground/80">
-                <div>Delhi - Connaught Place</div>
-                <div>Mumbai - Andheri West</div>
-                <div>Chandigarh - Sector 17</div>
-                <div>Bangalore - Koramangala</div>
-                <div>Hyderabad - Banjara Hills</div>
-                <div>Pune - Koregaon Park</div>
+                <div>Indore - Mahalaxmi Nagar</div>
+                <div>Panipat - SF 03 Happy Homes Emperium Society</div>
+                <div>Assandh - Safidon Road, Near Bus Stand</div>
+                <div>Sonipat - SCO No. 97 DS, Sector-15</div>
+                <div>Indri - Opposite Bus Stand</div>
               </div>
             </div>
           </div>
@@ -99,7 +98,7 @@ const Footer = () => {
                   </button>
                 </div>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-2">Follow Us</h4>
                 <div className="flex space-x-2">
@@ -117,18 +116,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        {/* WhatsApp Chat Button
-        <div className="fixed bottom-6 right-6 z-50">
-          <a 
-            href="https://wa.me/919050519168" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-2xl transition-all duration-300 hover:scale-110 animate-bounce-gentle"
-          >
-            <span className="text-2xl">💬</span>
-          </a>
-        </div> */}
 
         {/* Bottom Copyright */}
         <div className="border-t border-footer-foreground/20 mt-12 pt-6 text-center">

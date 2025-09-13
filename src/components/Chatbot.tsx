@@ -405,6 +405,7 @@ const Chatbot = () => {
                 flex-1 overflow-y-auto p-4 space-y-3
                 scrollbar-thin scrollbar-thumb-muted-foreground/30 scrollbar-track-muted/20
                 hover:scrollbar-thumb-muted-foreground/50
+                custom-scrollbar
               "
               style={{ 
                 scrollbarWidth: "thin",
@@ -536,6 +537,26 @@ const Chatbot = () => {
           </CardContent>
         </Card>
       )}
+      {/* Custom scrollbar styles */}
+      <style jsx global>{`
+        .custom-scrollbar {
+          scrollbar-width: thin;
+          scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(120, 120, 120, 0.2);
+          border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+          background: rgba(120, 120, 120, 0.4);
+        }
+      `}</style>
     </>
   );
 };
