@@ -122,7 +122,7 @@ const FreeCounsellingForm = ({ isOpen, onClose }: FreeCounsellingFormProps) => {
         return;
       }
 
-      // Submit to Supabase leads table with comprehensive data
+      // Submit to Supabase leads table with comprehensive counseling data
       const { error } = await supabase.from("leads").insert([
         {
           name: formData.name,

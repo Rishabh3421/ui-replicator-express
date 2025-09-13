@@ -112,7 +112,7 @@ const CallbackPopup = ({ isOpen, onClose }: CallbackPopupProps) => {
         return;
       }
 
-      // Submit to Supabase leads table with comprehensive data
+      // Submit to Supabase leads table with comprehensive callback data
       const { error } = await supabase.from("leads").insert([
         {
           name: formData.name,
