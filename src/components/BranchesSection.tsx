@@ -10,7 +10,7 @@ const BranchesSection = () => {
       phone: "+91 9050519168",
       email: "delhi@easyworldedu.com",
       timing: "Mon - Sat: 9:00 AM to 6:00 PM",
-      image: "/lovable-uploads/0129d08a-0d93-4380-8a93-062415c76d2e.png"
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ const BranchesSection = () => {
       phone: "+91 8950023501",
       email: "mumbai@easyworldedu.com",
       timing: "Mon - Sat: 9:00 AM to 6:00 PM",
-      image: "/lovable-uploads/0129d08a-0d93-4380-8a93-062415c76d2e.png"
+      image: "https://images.unsplash.com/photo-1660145416818-b9a2b1a1f193?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const BranchesSection = () => {
       phone: "+91 9050519168",
       email: "chandigarh@easyworldedu.com",
       timing: "Mon - Sat: 9:00 AM to 6:00 PM",
-      image: "/lovable-uploads/0129d08a-0d93-4380-8a93-062415c76d2e.png"
+      image: "https://images.unsplash.com/photo-1697308539764-74be3e4bb76b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       id: 4,
@@ -37,7 +37,7 @@ const BranchesSection = () => {
       phone: "+91 8950023501", 
       email: "bangalore@easyworldedu.com",
       timing: "Mon - Sat: 9:00 AM to 6:00 PM",
-      image: "/lovable-uploads/0129d08a-0d93-4380-8a93-062415c76d2e.png"
+      image: "https://images.unsplash.com/photo-1697130383976-38f28c444292?q=80&w=1026&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       id: 5,
@@ -46,7 +46,7 @@ const BranchesSection = () => {
       phone: "+91 9050519168",
       email: "hyderabad@easyworldedu.com", 
       timing: "Mon - Sat: 9:00 AM to 6:00 PM",
-      image: "/lovable-uploads/0129d08a-0d93-4380-8a93-062415c76d2e.png"
+      image: "https://images.unsplash.com/photo-1551161242-b5af797b7233?q=80&w=1151&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       id: 6,
@@ -55,7 +55,7 @@ const BranchesSection = () => {
       phone: "+91 8950023501",
       email: "pune@easyworldedu.com",
       timing: "Mon - Sat: 9:00 AM to 6:00 PM", 
-      image: "/lovable-uploads/0129d08a-0d93-4380-8a93-062415c76d2e.png"
+      image: "https://images.unsplash.com/photo-1686543918113-69f8a94b3b67?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ];
 
