@@ -143,7 +143,7 @@ const HeroSection = () => {
               className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-medium"
               variants={textChild}
             >
-              Managing Director: Ravi Kumar
+              Managing Director: Sahil Maan
             </motion.div>
 
             <motion.h1
