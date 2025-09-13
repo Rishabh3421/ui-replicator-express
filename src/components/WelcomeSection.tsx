@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
-import welcomeImage from "../assets/mddd.jpeg";
+import welcomeImage from "../assets/mddd (1).jpeg";
 
 const parentStagger = {
   hidden: { opacity: 0, y: 24 },
