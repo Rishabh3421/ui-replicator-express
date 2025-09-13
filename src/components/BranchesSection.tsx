@@ -80,9 +80,9 @@ const BranchesSection = () => {
                   alt={branch.name}
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
-                <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
+                {/* <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
                   Open
-                </div>
+                </div> */}
               </div>
               
               <CardHeader>
