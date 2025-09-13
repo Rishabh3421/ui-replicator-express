@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import welcomeImage from "@/assets/MD.png";
-import Watermark from "@/assets/mddd.jpeg";
+import Watermark from "@/assets/mddd (1).jpeg";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { motion } from "framer-motion";
 

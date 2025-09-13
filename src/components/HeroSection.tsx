@@ -125,7 +125,7 @@ const HeroSection = () => {
           </div>
         ))}
       </div>
-{/* hello */}
+
       {/* Left gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent" />
 
