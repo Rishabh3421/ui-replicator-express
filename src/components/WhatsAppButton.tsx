@@ -14,7 +14,7 @@ const WhatsAppButton = () => {
   return (
     <Button
       onClick={handleWhatsAppClick}
-      className="fixed bottom-6 left-6 h-16 w-16 rounded-full shadow-2xl z-50 bg-green-500 hover:bg-green-600 text-white p-0 animate-bounce hover:animate-none transition-all duration-300 hover:scale-110"
+      className="fixed bottom-6 left-6 h-16 w-16 rounded-full shadow-2xl z-50 bg-green-500 hover:bg-green-600 text-white p-0 animate-bounce hover:animate-none transition-all duration-900 hover:scale-110"
       size="icon"
       title="Chat on WhatsApp - Get instant assistance"
       aria-label="Chat on WhatsApp"

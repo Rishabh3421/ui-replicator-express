@@ -13,16 +13,16 @@ const Header = () => {
       {/* Top Bar */}
       <div className="bg-header-bg text-header-foreground py-2 text-sm hidden md:block">
         <div className="container mx-auto px-4 flex justify-between items-center">
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4" />
-                <span>mdeasyworld@gmail.com</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4" />
-                <span>Call Us: 9050519168, 8950023501</span>
-              </div>
+          <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-2">
+              <Mail className="w-4 h-4" />
+              <span>mdeasyworld@gmail.com</span>
             </div>
+            <div className="flex items-center space-x-2">
+              <Phone className="w-4 h-4" />
+              <span>Call Us: 9050519168, 8950023501</span>
+            </div>
+          </div>
           <div className="flex items-center space-x-4">
             <span>Instagram</span>
             <span>Facebook</span>
@@ -36,13 +36,14 @@ const Header = () => {
       <header className="bg-background border-b sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            {/* Logo */}
+            {/* Logo and Title */}
             <Link to="/" className="flex items-center space-x-3 group">
-              <img 
-                src="/lovable-uploads/0c5eb42a-7f1b-4596-acd8-a8b530e8e3ff.png" 
-                alt="Easy World Educational Consultant Logo" 
-                className="h-16 w-auto transition-all duration-300 group-hover:scale-105" 
+              <img
+                src="/lovable-uploads/0c5eb42a-7f1b-4596-acd8-a8b530e8e3ff.png"
+                alt="Easy World Educational Consultant Logo"
+                className="h-16 w-auto transition-all duration-300 group-hover:scale-105"
               />
+              <span className="text-primary font-bold text-xl">Easy World Education Consultants</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -64,7 +65,7 @@ const Header = () => {
               >
                 <Search className="w-4 h-4" />
               </Button> */}
-              <Button 
+              <Button
                 onClick={() => setIsEnquiryOpen(true)}
                 className="hidden md:flex bg-accent hover:bg-accent-dark text-accent-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
@@ -84,47 +85,49 @@ const Header = () => {
           </div>
 
           {/* Mobile Navigation Menu */}
-          <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-          }`}>
+          <div
+            className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+              isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            }`}
+          >
             <nav className="pt-4 pb-2 space-y-2">
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className="block px-4 py-2 text-foreground hover:bg-secondary rounded-md transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
-              <Link 
-                to="/about" 
+              <Link
+                to="/about"
                 className="block px-4 py-2 text-foreground hover:bg-secondary rounded-md transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
-              <Link 
-                to="/services" 
+              <Link
+                to="/services"
                 className="block px-4 py-2 text-foreground hover:bg-secondary rounded-md transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
-              <Link 
-                to="/countries" 
+              <Link
+                to="/countries"
                 className="block px-4 py-2 text-foreground hover:bg-secondary rounded-md transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Countries
               </Link>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="block px-4 py-2 text-foreground hover:bg-secondary rounded-md transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </Link>
               <div className="pt-2 space-y-2">
-                <Button 
+                <Button
                   onClick={() => {
                     setIsEnquiryOpen(true);
                     setIsMenuOpen(false);
@@ -140,10 +143,7 @@ const Header = () => {
       </header>
 
       {/* Enquiry Form Modal */}
-      <EnquiryForm 
-        isOpen={isEnquiryOpen} 
-        onClose={() => setIsEnquiryOpen(false)} 
-      />
+      <EnquiryForm isOpen={isEnquiryOpen} onClose={() => setIsEnquiryOpen(false)} />
     </>
   );
 };
