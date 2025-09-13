@@ -8,7 +8,9 @@ import RequirementsSection from "@/components/RequirementsSection";
 import TrustSection from "@/components/TrustSection";
 import ProcessTimelineSection from "@/components/ProcessTimelineSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import BranchesSection from "@/components/BranchesSection";
 import Chatbot from "@/components/Chatbot";
+import AutoPopup from "@/components/AutoPopup";
 
 const Index = () => {
   return (
@@ -22,8 +24,10 @@ const Index = () => {
       <TrustSection />
       <ProcessTimelineSection />
       <TestimonialsSection />
+      <BranchesSection />
       <Footer />
       <Chatbot />
+      <AutoPopup />
     </div>
   );
 };

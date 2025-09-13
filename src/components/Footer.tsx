@@ -70,8 +70,15 @@ const Footer = () => {
             </div>
             
             <div className="mt-6">
-              <h4 className="font-semibold mb-2">Branches</h4>
-              <p className="text-sm text-footer-foreground/80">Indore (HO), Assandh, Panipat, Sonipat, Indri</p>
+              <h4 className="font-semibold mb-2">Our Branches</h4>
+              <div className="space-y-1 text-sm text-footer-foreground/80">
+                <div>Delhi - Connaught Place</div>
+                <div>Mumbai - Andheri West</div>
+                <div>Chandigarh - Sector 17</div>
+                <div>Bangalore - Koramangala</div>
+                <div>Hyderabad - Banjara Hills</div>
+                <div>Pune - Koregaon Park</div>
+              </div>
             </div>
           </div>
 

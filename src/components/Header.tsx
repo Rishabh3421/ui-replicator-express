@@ -69,7 +69,7 @@ const Header = () => {
                 onClick={() => setIsEnquiryOpen(true)}
                 className="hidden md:flex bg-accent hover:bg-accent-dark text-accent-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
-                Apply Now
+                Enquire Now
               </Button>
 
               {/* Mobile Menu Button */}
