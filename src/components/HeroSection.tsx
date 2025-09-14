@@ -139,28 +139,21 @@ const HeroSection = () => {
             initial="hidden"
             animate="visible"
           >
-            <motion.div
-              className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-medium"
-              variants={textChild}
-            >
-              Managing Director: Sahil Maan
-            </motion.div>
-
             <motion.h1
               variants={textChild}
-              className="text-white text-5xl lg:text-7xl font-bold leading-tight max-w-[18ch]"
+              className="text-white text-5xl lg:text-7xl font-bold leading-tight max-w-[18ch] text-center sm:text-left"
             >
               Anywhere You Want to <span className="text-accent">Be</span>
             </motion.h1>
 
             <motion.p
               variants={textChild}
-              className="text-white/90 text-xl lg:text-2xl leading-relaxed max-w-[54ch]"
+              className="text-white/90 text-xl lg:text-2xl leading-relaxed max-w-[54ch] text-center sm:text-left"
             >
               Study. Work. Travel. Settle Abroad with Confidence.
             </motion.p>
 
-            <motion.div variants={textChild} className="flex flex-col sm:flex-row gap-4">
+            <motion.div variants={textChild} className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
               <Button
                 onClick={() => setShowModal(true)}
                 className="bg-accent text-accent-foreground px-8 py-4 text-lg animate-pulse"
@@ -238,24 +231,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-
-      {/* Slide indicators */}
-      {/* <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20"
-        variants={indicatorsFade}
-        initial="hidden"
-        animate="visible"
-      >
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrentSlide(i)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              i === currentSlide ? "bg-accent scale-125" : "bg-white/50 hover:bg-white/75"
-            }`}
-          />
-        ))}
-      </motion.div> */}
 
       {/* Modal Apply Now form */}
       <Dialog open={showModal} onOpenChange={setShowModal}>

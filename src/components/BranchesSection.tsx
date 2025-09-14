@@ -6,7 +6,7 @@ const BranchesSection = () => {
     {
       id: 1,
       name: "Indore Branch",
-      address: "Mahalaxmi Nagar, Vijay Nagar 452010, Indore",
+      address: "Mahalaxmi Nagar, Vijay Nagar, Indore - 452010",
       phone: "+91 99919 20206",
       email: "indore@easyworldedu.com",
       timing: "Mon - Sat: 9:00 AM to 6:00 PM"
@@ -14,7 +14,7 @@ const BranchesSection = () => {
     {
       id: 2,
       name: "Panipat Branch",
-      address: "SF 03 Happy Homes Emperium Society, Panipat",
+      address: "SF 03 Happy Homes Emperium Society, Panipat - 132103",
       phone: "+91 8396000445",
       email: "panipat@easyworldedu.com",
       timing: "Mon - Sat: 9:00 AM to 6:00 PM"
@@ -30,7 +30,7 @@ const BranchesSection = () => {
     {
       id: 4,
       name: "Sonipat Branch",
-      address: "SCO No. 97 DS, Sector-15, Sonipat (Basement + Ground Floor)",
+      address: "SCO No. 97 DS, Sector-15, Sonipat (Basement + Ground Floor) - 131001",
       phone: "+91 89500 23501",
       email: "sonipat@easyworldedu.com",
       timing: "Mon - Sat: 9:00 AM to 6:00 PM"
@@ -38,7 +38,7 @@ const BranchesSection = () => {
     {
       id: 5,
       name: "Indri Branch",
-      address: "Opposite Bus Stand, Shop No.18, Municipal Committee, Indri",
+      address: "Opposite Bus Stand, Shop No.18, Municipal Committee, Indri - 132041",
       phone: "+91 97297-79271",
       email: "indri@easyworldedu.com",
       timing: "Mon - Sat: 9:00 AM to 6:00 PM"
@@ -59,40 +59,34 @@ const BranchesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {branches.map((branch) => (
-            <Card key={branch.id} className="hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 shadow-soft">
+            <Card
+              key={branch.id}
+              className="hover:shadow-lg transition-all duration-300 hover:scale-105 border-0 shadow-soft"
+            >
               <CardHeader>
-                <CardTitle className="text-xl font-bold text-primary">
-                  {branch.name}
-                </CardTitle>
+                <CardTitle className="text-xl font-bold text-primary">{branch.name}</CardTitle>
               </CardHeader>
-              
-              <CardContent className="space-y-3">
+
+              <CardContent className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">
-                    {branch.address}
-                  </span>
+                  <span className="text-sm text-muted-foreground">{branch.address}</span>
                 </div>
-                
+
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-accent flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">
-                    {branch.phone}
-                  </span>
+                  <span className="text-sm text-muted-foreground">{branch.phone}</span>
                 </div>
-                
+
+                {/* Uncomment to add email */}
                 {/* <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-accent flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">
-                    {branch.email}
-                  </span>
+                  <span className="text-sm text-muted-foreground">{branch.email}</span>
                 </div> */}
-                
+
                 <div className="flex items-center space-x-3">
                   <Clock className="w-5 h-5 text-accent flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">
-                    {branch.timing}
-                  </span>
+                  <span className="text-sm text-muted-foreground">{branch.timing}</span>
                 </div>
               </CardContent>
             </Card>

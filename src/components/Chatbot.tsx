@@ -338,227 +338,229 @@ const Chatbot = () => {
       return;
     }
   };
+return (
+  <>
+    {/* Chat Toggle Button */}
+    {!isOpen && (
+      <Button
+        onClick={() => setIsOpen(true)}
+        className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-xl z-[60] bg-accent hover:bg-accent/90 focus:ring-4 focus:ring-accent/30"
+        size="icon"
+        aria-label="Open chat"
+        title="Ask Easy World"
+      >
+        <MessageCircle className="h-6 w-6 text-accent-foreground" />
+      </Button>
+    )}
 
-  return (
-    <>
-      {/* Chat Toggle Button */}
-      {!isOpen && (
-        <Button
-          onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-xl z-[60] bg-accent hover:bg-accent/90 focus:ring-4 focus:ring-accent/30"
-          size="icon"
-          aria-label="Open chat"
-          title="Ask Easy World"
-        >
-          <MessageCircle className="h-6 w-6 text-accent-foreground" />
-        </Button>
-      )}
-
-      {/* Chat Window */}
-      {isOpen && (
-        <Card
-          className="
-            fixed bottom-6 right-6 
-            w-[360px] sm:w-[380px] max-w-[92vw] 
-            h-[560px] max-h-[calc(100vh-32px)] 
-            shadow-2xl z-[60] flex flex-col 
-            border border-border/60 rounded-2xl overflow-hidden
-            bg-background
-          "
-        >
-          <CardHeader className="bg-accent text-accent-foreground p-4">
-            <CardTitle className="flex items-center justify-between text-base font-semibold">
-              <span className="flex items-center gap-2">
-                <MessageCircle className="h-4 w-4" />
-                Ask Easy World
-              </span>
-              <div className="flex items-center gap-2">
-                {canGoBack && (
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={goBack}
-                    aria-label="Back"
-                    className="h-6 w-6 hover:bg-accent/20"
-                  >
-                    <ArrowLeft className="h-4 w-4" />
-                  </Button>
-                )}
+    {/* Chat Window */}
+    {isOpen && (
+      <Card
+        className="
+          fixed bottom-6 right-6 
+          w-[360px] sm:w-[380px] max-w-[92vw] 
+          h-[560px] max-h-[calc(100vh-32px)] 
+          shadow-2xl z-[60] flex flex-col 
+          border border-border/60 rounded-2xl overflow-hidden
+          bg-background
+        "
+      >
+        <CardHeader className="bg-accent text-accent-foreground p-4">
+          <CardTitle className="flex items-center justify-between text-base font-semibold">
+            <span className="flex items-center gap-2">
+              <MessageCircle className="h-4 w-4" />
+              Ask Easy World
+            </span>
+            <div className="flex items-center gap-2">
+              {canGoBack && (
                 <Button
                   variant="ghost"
                   size="icon"
-                  onClick={() => setIsOpen(false)}
-                  aria-label="Close"
+                  onClick={goBack}
+                  aria-label="Back"
                   className="h-6 w-6 hover:bg-accent/20"
                 >
-                  <X className="h-4 w-4" />
+                  <ArrowLeft className="h-4 w-4" />
                 </Button>
-              </div>
-            </CardTitle>
-          </CardHeader>
+              )}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsOpen(false)}
+                aria-label="Close"
+                className="h-6 w-6 hover:bg-accent/20"
+              >
+                <X className="h-4 w-4" />
+              </Button>
+            </div>
+          </CardTitle>
+        </CardHeader>
 
-          <CardContent className="flex-1 flex flex-col p-0 bg-background">
-            {/* Messages (scrollable) */}
-            <div
-              ref={scrollerRef}
-              className="
-                flex-1 overflow-y-auto p-4 space-y-3
-                scrollbar-thin scrollbar-thumb-muted-foreground/30 scrollbar-track-muted/20
-                hover:scrollbar-thumb-muted-foreground/50
-                custom-scrollbar
-              "
-              style={{ 
-                scrollbarWidth: "thin",
-                scrollbarColor: "hsl(var(--muted-foreground) / 0.3) transparent"
-              }}
-            >
-              {messages.map((message) => (
+        <CardContent className="flex-1 flex flex-col p-0 bg-background">
+          {/* Messages (scrollable) */}
+          <div
+            ref={scrollerRef}
+            className="
+              flex-1 overflow-y-auto p-4 space-y-3
+              scrollbar-thin scrollbar-thumb-muted-foreground/30 scrollbar-track-muted/20
+              hover:scrollbar-thumb-muted-foreground/50
+              custom-scrollbar
+            "
+            style={{
+              maxHeight: 'calc(100vh - 220px)', // Adjusting height to add more padding at the bottom
+            }}
+          >
+            {messages.map((message) => (
+              <div
+                key={message.id}
+                className={message.type === "user" ? "flex justify-end" : "flex justify-start"}
+              >
                 <div
-                  key={message.id}
-                  className={message.type === "user" ? "flex justify-end" : "flex justify-start"}
+                  className={[
+                    "px-3 py-2 rounded-2xl text-sm",
+                    "max-w-[85%] break-words whitespace-pre-wrap",
+                    message.type === "user"
+                      ? "bg-accent text-accent-foreground rounded-br-sm"
+                      : "bg-secondary text-secondary-foreground rounded-bl-sm",
+                  ].join(" ")}
                 >
-                  <div
-                    className={[
-                      "px-3 py-2 rounded-2xl text-sm",
-                      "max-w-[85%] break-words whitespace-pre-wrap",
-                      message.type === "user"
-                        ? "bg-accent text-accent-foreground rounded-br-sm"
-                        : "bg-secondary text-secondary-foreground rounded-bl-sm",
-                    ].join(" ")}
-                  >
-                    {message.content}
+                  {message.content}
 
-                    {/* Options */}
-                    {message.options && (
-                      <div className="mt-3 grid grid-cols-1 gap-2">
-                        {message.options.map((opt) => (
+                  {/* Options */}
+                  {message.options && (
+                    <div className="mt-3 grid grid-cols-1 gap-2">
+                      {message.options.map((opt) => (
+                        <Button
+                          key={opt}
+                          variant="outline"
+                          size="sm"
+                          className="justify-start text-xs w-full"
+                          onClick={() => {
+                            if (
+                              opt === "Talk on WhatsApp" ||
+                              opt === "Email us" ||
+                              opt === "Back to main menu"
+                            ) {
+                              quickAction(opt);
+                            } else {
+                              handleOptionClick(opt);
+                            }
+                          }}
+                        >
+                          {opt}
+                        </Button>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Countries */}
+                  {message.countries && (
+                    <div className="mt-3 grid grid-cols-2 gap-2">
+                      {loadingCountries ? (
+                        <div className="col-span-2 text-xs opacity-70">Loading countries…</div>
+                      ) : (
+                        message.countries.map((country) => (
                           <Button
-                            key={opt}
+                            key={country.slug}
                             variant="outline"
                             size="sm"
-                            className="justify-start text-xs w-full"
-                            onClick={() => {
-                              if (
-                                opt === "Talk on WhatsApp" ||
-                                opt === "Email us" ||
-                                opt === "Back to main menu"
-                              ) {
-                                quickAction(opt);
-                              } else {
-                                handleOptionClick(opt);
-                              }
-                            }}
+                            className="h-auto py-2 px-2 text-xs leading-tight"
+                            onClick={() => handleCountrySelect(country)}
+                            title={country.name}
                           >
-                            {opt}
+                            <div className="w-full text-center">
+                              <div className="text-lg leading-none">{country.flag_emoji}</div>
+                              <div className="mt-1">{country.name}</div>
+                            </div>
                           </Button>
-                        ))}
-                      </div>
-                    )}
+                        ))
+                      )}
+                    </div>
+                  )}
 
-                    {/* Countries */}
-                    {message.countries && (
-                      <div className="mt-3 grid grid-cols-2 gap-2">
-                        {loadingCountries ? (
-                          <div className="col-span-2 text-xs opacity-70">Loading countries…</div>
-                        ) : (
-                          message.countries.map((country) => (
-                            <Button
-                              key={country.slug}
-                              variant="outline"
-                              size="sm"
-                              className="h-auto py-2 px-2 text-xs leading-tight"
-                              onClick={() => handleCountrySelect(country)}
-                              title={country.name}
-                            >
-                              <div className="w-full text-center">
-                                <div className="text-lg leading-none">{country.flag_emoji}</div>
-                                <div className="mt-1">{country.name}</div>
-                              </div>
-                            </Button>
-                          ))
-                        )}
-                      </div>
-                    )}
-
-                    {/* Visa chips */}
-                    {message.visaTypes && (
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        {message.visaTypes.map((vt) => (
-                          <Badge
-                            key={vt}
-                            variant="outline"
-                            className="cursor-pointer text-xs px-2 py-1 hover:bg-muted"
-                            onClick={() => handleVisaTypeSelect(vt)}
-                          >
-                            {vt}
-                          </Badge>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  {/* Visa chips */}
+                  {message.visaTypes && (
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {message.visaTypes.map((vt) => (
+                        <Badge
+                          key={vt}
+                          variant="outline"
+                          className="cursor-pointer text-xs px-2 py-1 hover:bg-muted"
+                          onClick={() => handleVisaTypeSelect(vt)}
+                        >
+                          {vt}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              ))}
+              </div>
+            ))}
+          </div>
+
+          {/* Footer */}
+          <div className="border-t p-3 bg-background">
+            <div className="flex gap-2 mb-3">
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex-1 text-xs"
+                onClick={() => openWhatsApp("Hi Easy World, I’d like to chat.")}
+              >
+                WhatsApp
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex-1 text-xs"
+                onClick={() => (window.location.href = "mailto:mdeasyworld@gmail.com")}
+              >
+                Email
+              </Button>
             </div>
 
-            {/* Footer */}
-            <div className="border-t p-3 bg-background">
-              <div className="flex gap-2 mb-3">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="flex-1 text-xs"
-                  onClick={() => openWhatsApp("Hi Easy World, I’d like to chat.")}
-                >
-                  WhatsApp
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="flex-1 text-xs"
-                  onClick={() => (window.location.href = "mailto:mdeasyworld@gmail.com")}
-                >
-                  Email
-                </Button>
-              </div>
-
-              <div className="flex gap-2">
-                <Input
-                  placeholder="Type a message…"
-                  value={userInput}
-                  onChange={(e) => setUserInput(e.target.value)}
-                  onKeyDown={onPressEnter}
-                  className="text-sm"
-                />
-                <Button size="sm" onClick={handleSendMessage} aria-label="Send">
-                  <Send className="h-4 w-4" />
-                </Button>
-              </div>
+            <div className="flex gap-2">
+              <Input
+                placeholder="Type a message…"
+                value={userInput}
+                onChange={(e) => setUserInput(e.target.value)}
+                onKeyDown={onPressEnter}
+                className="text-sm"
+              />
+              <Button size="sm" onClick={handleSendMessage} aria-label="Send">
+                <Send className="h-4 w-4" />
+              </Button>
             </div>
-          </CardContent>
-        </Card>
-      )}
-      {/* Custom scrollbar styles */}
-      <style jsx global>{`
-        .custom-scrollbar {
-          scrollbar-width: thin;
-          scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 8px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(120, 120, 120, 0.2);
-          border-radius: 8px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: transparent;
-        }
-        .custom-scrollbar:hover::-webkit-scrollbar-thumb {
-          background: rgba(120, 120, 120, 0.4);
-        }
-      `}</style>
-    </>
-  );
+          </div>
+        </CardContent>
+      </Card>
+    )}
+
+    {/* Custom scrollbar styles */}
+    <style jsx global>{`
+      .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(120, 120, 120, 0.2);
+        border-radius: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+        background: rgba(120, 120, 120, 0.4);
+      }
+    `}</style>
+  </>
+);
+
+
+
 };
 
 export default Chatbot;

@@ -52,7 +52,7 @@ const Footer = () => {
                 <MapPin className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">Head Office:</p>
-                  <p className="text-footer-foreground/80">Mahalaxmi Nagar, Vijay Nagar, Indore – 452010</p>
+                  <p className="text-footer-foreground/80">Mahalaxmi Nagar, Vijay Nagar, Indore, Madhya Pradesh - 452010</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
@@ -68,50 +68,31 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-
-            <div className="mt-6">
-              <h4 className="font-semibold mb-2">Our Branches</h4>
-              <div className="space-y-1 text-sm text-footer-foreground/80">
-                <div>Indore - Mahalaxmi Nagar</div>
-                <div>Panipat - SF 03 Happy Homes Emperium Society</div>
-                <div>Assandh - Safidon Road, Near Bus Stand</div>
-                <div>Sonipat - SCO No. 97 DS, Sector-15</div>
-                <div>Indri - Opposite Bus Stand</div>
-              </div>
-            </div>
           </div>
 
-          {/* Column 4: Newsletter & Social */}
+          {/* Column 4: Branches */}
           <div className="animate-fade-in-right" style={{ animationDelay: '0.6s' }}>
-            <h3 className="text-lg font-semibold mb-4">Stay Connected</h3>
-            <div className="space-y-4">
-              <div>
-                <p className="text-sm text-footer-foreground/80 mb-3">Subscribe for latest updates</p>
-                <div className="flex">
-                  <input 
-                    type="email" 
-                    placeholder="Enter email address..." 
-                    className="flex-1 px-3 py-2 text-primary bg-white rounded-l text-sm focus:outline-none focus:ring-2 focus:ring-accent"
-                  />
-                  <button className="bg-accent hover:bg-accent-dark px-4 py-2 rounded-r transition-colors duration-300">
-                    <span className="text-accent-foreground">→</span>
-                  </button>
-                </div>
+            <h3 className="text-lg font-semibold mb-4">Our Branches</h3>
+            <div className="space-y-4 text-sm text-footer-foreground/80">
+              <div className="flex flex-col space-y-2">
+                <div className="font-medium">Indore</div>
+                <p>Mahalaxmi Nagar, Vijay Nagar, Indore - 452010</p>
               </div>
-
-              <div>
-                <h4 className="font-semibold mb-2">Follow Us</h4>
-                <div className="flex space-x-2">
-                  <div className="w-8 h-8 bg-accent hover:bg-accent-dark rounded cursor-pointer transition-all duration-300 hover:scale-110 flex items-center justify-center">
-                    <span className="text-accent-foreground text-xs">FB</span>
-                  </div>
-                  <div className="w-8 h-8 bg-accent hover:bg-accent-dark rounded cursor-pointer transition-all duration-300 hover:scale-110 flex items-center justify-center">
-                    <span className="text-accent-foreground text-xs">IG</span>
-                  </div>
-                  <div className="w-8 h-8 bg-accent hover:bg-accent-dark rounded cursor-pointer transition-all duration-300 hover:scale-110 flex items-center justify-center">
-                    <span className="text-accent-foreground text-xs">LI</span>
-                  </div>
-                </div>
+              <div className="flex flex-col space-y-2">
+                <div className="font-medium">Panipat</div>
+                <p>SF 03 Happy Homes Emperium Society, Panipat - 132103</p>
+              </div>
+              <div className="flex flex-col space-y-2">
+                <div className="font-medium">Assandh</div>
+                <p>Safidon Road, Near Bus Stand, Assandh - 132039</p>
+              </div>
+              <div className="flex flex-col space-y-2">
+                <div className="font-medium">Sonipat</div>
+                <p>SCO No. 97 DS, Sector-15, Sonipat - 131001</p>
+              </div>
+              <div className="flex flex-col space-y-2">
+                <div className="font-medium">Indri</div>
+                <p>Opposite Bus Stand, Shop No.18, Municipal Committee, Indri - 132041</p>
               </div>
             </div>
           </div>
