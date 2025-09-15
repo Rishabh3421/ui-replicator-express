@@ -139,136 +139,121 @@ Message: ${formData.message}`;
     }
   };
 
-  return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle className="flex items-center justify-between">
-            Apply for Visa Consultation
-            {/* <Button
-              variant="ghost"
-              size="icon"
-              onClick={onClose}
-              className="h-6 w-6"
-            >
-              <X className="h-4 w-4" />
-            </Button> */}
-          </DialogTitle>
-        </DialogHeader>
+ return (
+  <Dialog open={isOpen} onOpenChange={onClose}>
+    <DialogContent
+      className="
+        w-[92vw] max-w-[560px] md:max-w-[720px]
+        p-0 rounded-2xl
+        max-h-[88vh] overflow-y-auto
+      "
+    >
+      <DialogHeader className="px-6 py-5 border-b">
+        <DialogTitle className="text-lg md:text-xl">
+          Apply for Visa Consultation
+        </DialogTitle>
+      </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <Label htmlFor="name">Full Name *</Label>
-            <Input
-              id="name"
-              value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
-              placeholder="Enter your full name"
-              required
-            />
-          </div>
+      <form onSubmit={handleSubmit} className="space-y-5 p-6 md:p-8">
+        <div>
+          <Label htmlFor="name">Full Name *</Label>
+          <Input
+            id="name"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            placeholder="Enter your full name"
+            required
+            className="h-11 text-base"
+          />
+        </div>
 
-          <div>
-            <Label htmlFor="email">Email Address *</Label>
-            <Input
-              id="email"
-              type="email"
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-              placeholder="Enter your email"
-              required
-            />
-          </div>
+        <div>
+          <Label htmlFor="email">Email Address *</Label>
+          <Input
+            id="email"
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            placeholder="Enter your email"
+            required
+            className="h-11 text-base"
+          />
+        </div>
 
-          <div>
-            <Label htmlFor="phone">Phone Number *</Label>
-            <Input
-              id="phone"
-              value={formData.phone}
-              onChange={(e) =>
-                setFormData({ ...formData, phone: e.target.value })
-              }
-              placeholder="Enter your phone number"
-              required
-            />
-          </div>
+        <div>
+          <Label htmlFor="phone">Phone Number *</Label>
+          <Input
+            id="phone"
+            value={formData.phone}
+            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            placeholder="Enter your phone number"
+            required
+            className="h-11 text-base"
+          />
+        </div>
 
-          <div>
-            <Label htmlFor="country">Preferred Country</Label>
-            <Select
-              value={formData.country}
-              onValueChange={(value) =>
-                setFormData({ ...formData, country: value })
-              }
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Select a country" />
-              </SelectTrigger>
-              <SelectContent>
-                {countries.map((country) => (
-                  <SelectItem key={country} value={country}>
-                    {country}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
+        <div>
+          <Label htmlFor="country">Preferred Country</Label>
+          <Select
+            value={formData.country}
+            onValueChange={(value) => setFormData({ ...formData, country: value })}
+          >
+            <SelectTrigger className="h-11 text-base">
+              <SelectValue placeholder="Select a country" />
+            </SelectTrigger>
+            <SelectContent>
+              {countries.map((country) => (
+                <SelectItem key={country} value={country}>
+                  {country}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
 
-          <div>
-            <Label htmlFor="visaType">Visa Type</Label>
-            <Select
-              value={formData.visaType}
-              onValueChange={(value) =>
-                setFormData({ ...formData, visaType: value })
-              }
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Select visa type" />
-              </SelectTrigger>
-              <SelectContent>
-                {visaTypes.map((type) => (
-                  <SelectItem key={type} value={type}>
-                    {type}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
+        <div>
+          <Label htmlFor="visaType">Visa Type</Label>
+          <Select
+            value={formData.visaType}
+            onValueChange={(value) => setFormData({ ...formData, visaType: value })}
+          >
+            <SelectTrigger className="h-11 text-base">
+              <SelectValue placeholder="Select visa type" />
+            </SelectTrigger>
+            <SelectContent>
+              {visaTypes.map((type) => (
+                <SelectItem key={type} value={type}>
+                  {type}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
 
-          <div>
-            <Label htmlFor="message">Message (Optional)</Label>
-            <Textarea
-              id="message"
-              value={formData.message}
-              onChange={(e) =>
-                setFormData({ ...formData, message: e.target.value })
-              }
-              placeholder="Tell us about your requirements..."
-              rows={3}
-            />
-          </div>
+        <div>
+          <Label htmlFor="message">Message (Optional)</Label>
+          <Textarea
+            id="message"
+            value={formData.message}
+            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            placeholder="Tell us about your requirements..."
+            className="min-h-[120px] text-base"
+          />
+        </div>
 
-          <div className="flex gap-3 pt-4">
-            <Button
-              type="button"
-              variant="outline"
-              onClick={onClose}
-              className="flex-1"
-            >
-              Cancel
-            </Button>
-            <Button type="submit" disabled={loading} className="flex-1">
-              {loading ? "Submitting..." : "Submit Enquiry"}
-            </Button>
-          </div>
-        </form>
-      </DialogContent>
-    </Dialog>
-  );
+        <div className="flex gap-3 pt-2">
+          <Button type="button" variant="outline" onClick={onClose} className="flex-1 h-11">
+            Cancel
+          </Button>
+          <Button type="submit" disabled={loading} className="flex-1 h-11">
+            {loading ? "Submitting..." : "Submit Enquiry"}
+          </Button>
+        </div>
+      </form>
+    </DialogContent>
+  </Dialog>
+);
+
 };
 
 export default EnquiryForm;

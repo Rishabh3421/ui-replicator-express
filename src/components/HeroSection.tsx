@@ -110,158 +110,108 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative h-screen overflow-hidden">
-      {/* Background carousel */}
-      <div className="absolute inset-0">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <img src={slide.image} alt={slide.alt} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black/40" />
-          </div>
-        ))}
+<div className="relative h-screen overflow-hidden px-4 sm:px-6 lg:px-10">
+  {/* Background carousel */}
+  <div className="absolute inset-0">
+    {slides.map((slide, index) => (
+      <div
+        key={index}
+        className={`absolute inset-0 transition-opacity duration-1000 ${
+          index === currentSlide ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <img
+          src={slide.image}
+          alt={slide.alt}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
+    ))}
+  </div>
 
-      {/* Left gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent" />
+  {/* Left gradient */}
+  <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent" />
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex items-center max-w-[1400px] mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
-          {/* LEFT: animated text block */}
-          <motion.div
-            className="lg:col-span-5 space-y-8"
-            variants={textParent}
-            initial="hidden"
-            animate="visible"
+  {/* Content */}
+  <div className="relative z-10 h-full flex items-center max-w-[1400px] mx-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
+      {/* LEFT: animated text block */}
+      <motion.div
+        className="lg:col-span-5 space-y-8"
+        variants={textParent}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.h1
+          variants={textChild}
+          className="text-white text-5xl lg:text-7xl font-bold leading-tight max-w-[18ch] text-center sm:text-left"
+        >
+          Anywhere You Want to <span className="text-accent">Be</span>
+        </motion.h1>
+
+        <motion.p
+          variants={textChild}
+          className="text-white/90 text-xl lg:text-2xl leading-relaxed max-w-[54ch] text-center sm:text-left"
+        >
+          Study. Work. Travel. Settle Abroad with Confidence.
+        </motion.p>
+
+        <motion.div
+          variants={textChild}
+          className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start"
+        >
+          <Button
+            onClick={() => setShowModal(true)}
+            className="bg-accent text-accent-foreground px-8 py-4 text-lg animate-pulse"
           >
-            <motion.h1
-              variants={textChild}
-              className="text-white text-5xl lg:text-7xl font-bold leading-tight max-w-[18ch] text-center sm:text-left"
-            >
-              Anywhere You Want to <span className="text-accent">Be</span>
-            </motion.h1>
-
-            <motion.p
-              variants={textChild}
-              className="text-white/90 text-xl lg:text-2xl leading-relaxed max-w-[54ch] text-center sm:text-left"
-            >
-              Study. Work. Travel. Settle Abroad with Confidence.
-            </motion.p>
-
-            <motion.div variants={textChild} className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
-              <Button
-                onClick={() => setShowModal(true)}
-                className="bg-accent text-accent-foreground px-8 py-4 text-lg animate-pulse"
-              >
-                Apply Now
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => setShowModal(true)}
-                className="border-2 border-white text-black hover:bg-white hover:text-primary px-8 py-4 text-lg"
-              >
-                Free Consultation
-              </Button>
-            </motion.div>
-          </motion.div>
-
-          {/* RIGHT: animated form card */}
-          <motion.div
-            className="lg:col-span-7 lg:justify-self-end"
-            variants={cardSlideIn}
-            initial="hidden"
-            animate="visible"
+            Apply Now
+          </Button>
+          {/* <Button
+            variant="outline"
+            onClick={() => setShowModal(true)}
+            className="border-2 border-white text-black hover:bg-white hover:text-primary px-8 py-4 text-lg"
           >
-            <div className="w-full bg-white/15 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
-              <h3 className="text-2xl font-semibold mb-6 text-center text-white">Quick Enquiry</h3>
+            Free Consultation
+          </Button> */}
+        </motion.div>
+      </motion.div>
 
-              <form
-                className="grid grid-cols-1 md:grid-cols-2 gap-4"
-                onSubmit={handleEnquirySubmit}
-              >
-                <Input
-                  placeholder="Your Name"
-                  className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30 w-full"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-                <Input
-                  type="email"
-                  placeholder="Email Address"
-                  className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30 w-full"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <Input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30 w-full"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-                <Select value={visaType} onValueChange={setVisaType}>
-                  <SelectTrigger className="bg-white/20 border-white/30 text-white w-full">
-                    <SelectValue placeholder="Select Visa Type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Student Visa">Student Visa</SelectItem>
-                    <SelectItem value="Work Visa">Work Visa</SelectItem>
-                    <SelectItem value="PR Visa">PR Visa</SelectItem>
-                    <SelectItem value="Tourist Visa">Tourist Visa</SelectItem>
-                    <SelectItem value="Business Visa">Business Visa</SelectItem>
-                    <SelectItem value="Family Visa">Family Visa</SelectItem>
-                  </SelectContent>
-                </Select>
+      {/* RIGHT: animated form card */}
+      <motion.div
+        className="lg:col-span-7 lg:justify-self-end"
+        variants={cardSlideIn}
+        initial="hidden"
+        animate="visible"
+      >
+        <div className="w-full bg-white/15 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
+          <h3 className="text-2xl font-semibold mb-6 text-center text-white">
+            Quick Enquiry
+          </h3>
 
-                <div className="md:col-span-2">
-                  <Button
-                    type="submit"
-                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground py-3"
-                  >
-                    Submit Enquiry
-                  </Button>
-                </div>
-              </form>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Modal Apply Now form */}
-      <Dialog open={showModal} onOpenChange={setShowModal}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Apply for Visa Consultation</DialogTitle>
-          </DialogHeader>
-
-          <form onSubmit={handleModalSubmit} className="space-y-4">
+          <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={handleEnquirySubmit}>
             <Input
-              placeholder="Full Name"
-              value={modalName}
-              onChange={(e) => setModalName(e.target.value)}
-              required
+              placeholder="Your Name"
+              className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30 w-full"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
             <Input
               type="email"
               placeholder="Email Address"
-              value={modalEmail}
-              onChange={(e) => setModalEmail(e.target.value)}
-              required
+              className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30 w-full"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <Input
               type="tel"
               placeholder="Phone Number"
-              value={modalPhone}
-              onChange={(e) => setModalPhone(e.target.value)}
-              required
+              className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30 w-full"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
             />
-            <Select value={modalVisa} onValueChange={setModalVisa}>
-              <SelectTrigger>
+            <Select value={visaType} onValueChange={setVisaType}>
+              <SelectTrigger className="bg-white/20 border-white/30 text-white w-full">
                 <SelectValue placeholder="Select Visa Type" />
               </SelectTrigger>
               <SelectContent>
@@ -273,31 +223,88 @@ const HeroSection = () => {
                 <SelectItem value="Family Visa">Family Visa</SelectItem>
               </SelectContent>
             </Select>
-            <textarea
-              className="w-full rounded-md border p-2"
-              rows={3}
-              placeholder="Additional message (optional)"
-              value={modalMessage}
-              onChange={(e) => setModalMessage(e.target.value)}
-            />
 
-            <div className="flex gap-3 pt-2">
+            <div className="md:col-span-2">
               <Button
-                type="button"
-                variant="outline"
-                onClick={() => setShowModal(false)}
-                className="flex-1"
+                type="submit"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground py-3"
               >
-                Cancel
-              </Button>
-              <Button type="submit" className="flex-1 bg-accent hover:bg-accent/90">
-                Submit
+                Submit Enquiry
               </Button>
             </div>
           </form>
-        </DialogContent>
-      </Dialog>
+        </div>
+      </motion.div>
     </div>
+  </div>
+
+  {/* Modal Apply Now form */}
+  <Dialog open={showModal} onOpenChange={setShowModal}>
+    <DialogContent className="sm:max-w-md">
+      <DialogHeader>
+        <DialogTitle>Apply for Visa Consultation</DialogTitle>
+      </DialogHeader>
+
+      <form onSubmit={handleModalSubmit} className="space-y-4">
+        <Input
+          placeholder="Full Name"
+          value={modalName}
+          onChange={(e) => setModalName(e.target.value)}
+          required
+        />
+        <Input
+          type="email"
+          placeholder="Email Address"
+          value={modalEmail}
+          onChange={(e) => setModalEmail(e.target.value)}
+          required
+        />
+        <Input
+          type="tel"
+          placeholder="Phone Number"
+          value={modalPhone}
+          onChange={(e) => setModalPhone(e.target.value)}
+          required
+        />
+        <Select value={modalVisa} onValueChange={setModalVisa}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select Visa Type" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="Student Visa">Student Visa</SelectItem>
+            <SelectItem value="Work Visa">Work Visa</SelectItem>
+            <SelectItem value="PR Visa">PR Visa</SelectItem>
+            <SelectItem value="Tourist Visa">Tourist Visa</SelectItem>
+            <SelectItem value="Business Visa">Business Visa</SelectItem>
+            <SelectItem value="Family Visa">Family Visa</SelectItem>
+          </SelectContent>
+        </Select>
+        <textarea
+          className="w-full rounded-md border p-2"
+          rows={3}
+          placeholder="Additional message (optional)"
+          value={modalMessage}
+          onChange={(e) => setModalMessage(e.target.value)}
+        />
+
+        <div className="flex gap-3 pt-2">
+          <Button
+            type="button"
+            variant="outline"
+            onClick={() => setShowModal(false)}
+            className="flex-1"
+          >
+            Cancel
+          </Button>
+          <Button type="submit" className="flex-1 bg-accent hover:bg-accent/90">
+            Submit
+          </Button>
+        </div>
+      </form>
+    </DialogContent>
+  </Dialog>
+</div>
+
   );
 };
 

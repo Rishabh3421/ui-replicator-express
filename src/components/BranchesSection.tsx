@@ -2,48 +2,49 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const BranchesSection = () => {
-  const branches = [
-    {
-      id: 1,
-      name: "Indore Branch",
-      address: "Mahalaxmi Nagar, Vijay Nagar, Indore - 452010",
-      phone: "+91 99919 20206",
-      email: "indore@easyworldedu.com",
-      timing: "Mon - Sat: 9:00 AM to 6:00 PM"
-    },
-    {
-      id: 2,
-      name: "Panipat Branch",
-      address: "SF 03 Happy Homes Emperium Society, Panipat - 132103",
-      phone: "+91 8396000445",
-      email: "panipat@easyworldedu.com",
-      timing: "Mon - Sat: 9:00 AM to 6:00 PM"
-    },
-    {
-      id: 3,
-      name: "Assandh Branch",
-      address: "Above Karan Furniture 1st Floor, Safidon Road, Near Bus Stand, Assandh - 132039",
-      phone: "+91 99919 29607",
-      email: "assandh@easyworldedu.com",
-      timing: "Mon - Sat: 9:00 AM to 6:00 PM"
-    },
-    {
-      id: 4,
-      name: "Sonipat Branch",
-      address: "SCO No. 97 DS, Sector-15, Sonipat (Basement + Ground Floor) - 131001",
-      phone: "+91 89500 23501",
-      email: "sonipat@easyworldedu.com",
-      timing: "Mon - Sat: 9:00 AM to 6:00 PM"
-    },
-    {
-      id: 5,
-      name: "Indri Branch",
-      address: "Opposite Bus Stand, Shop No.18, Municipal Committee, Indri - 132041",
-      phone: "+91 97297-79271",
-      email: "indri@easyworldedu.com",
-      timing: "Mon - Sat: 9:00 AM to 6:00 PM"
-    }
-  ];
+const branches = [
+  {
+    id: 1,
+    name: "Indore Branch",
+    address: "Mahalaxmi Nagar, Vijay Nagar, Indore - 452010",
+    phone: "+91 99919 20206",
+    email: "indore@easyworldedu.com",
+    timing: "Mon - Sat: 9:00 AM to 6:00 PM"
+  },
+  {
+    id: 2,
+    name: "Panipat Branch",
+    address: "SF 03 Happy Homes Emperium Society, Panipat - 132103",
+    phone: "+91 83960 00445",
+    email: "panipat@easyworldedu.com",
+    timing: "Mon - Sat: 9:00 AM to 6:00 PM"
+  },
+  {
+    id: 3,
+    name: "Assandh Branch",
+    address: "Above Karan Furniture 1st Floor, Safidon Road, Near Bus Stand, Assandh - 132039",
+    phone: "+91 99919 29607",
+    email: "assandh@easyworldedu.com",
+    timing: "Mon - Sat: 9:00 AM to 6:00 PM"
+  },
+  {
+    id: 4,
+    name: "Sonipat Branch",
+    address: "SCO No. 97 DS, Sector-15, Sonipat (Basement + Ground Floor) - 131001",
+    phone: "+91 89500 23501",
+    email: "sonipat@easyworldedu.com",
+    timing: "Mon - Sat: 9:00 AM to 6:00 PM"
+  },
+  {
+    id: 5,
+    name: "Indri Branch",
+    address: "Opposite Bus Stand, Shop No.18, Municipal Committee, Indri - 132041",
+    phone: "+91 97297 79271",
+    email: "indri@easyworldedu.com",
+    timing: "Mon - Sat: 9:00 AM to 6:00 PM"
+  }
+];
+
 
   return (
     <section className="py-16 bg-secondary">

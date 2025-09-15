@@ -79,7 +79,7 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {[
                   "5+ years of expertise",
-                  "1000+ successful cases",
+                  "2500+ successful cases",
                   "Personalized case reviews",
                   "Transparent & hassle-free process",
                 ].map((item, index) => (
@@ -102,10 +102,10 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="flex gap-3 pt-2"
               >
-                <Button className="bg-accent hover:bg-accent-dark text-accent-foreground">
+                {/* <Button className="bg-accent hover:bg-accent-dark text-accent-foreground">
                   Book Free Consultation
                 </Button>
-                <Button variant="outline">Explore Services</Button>
+                <Button variant="outline">Explore Services</Button> */}
               </motion.div>
             </motion.div>
           </div>

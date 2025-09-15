@@ -125,9 +125,9 @@ const WelcomeSection = () => {
             </motion.div>
 
             <motion.div variants={child}>
-              <Button className="bg-accent hover:bg-accent-dark text-accent-foreground px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <div className="bg-accent text-accent-foreground px-8 py-4 text-lg transition-all duration-300 text-center ">
                 Start Your Journey Today
-              </Button>
+              </div>
             </motion.div>
           </motion.div>
         </div>

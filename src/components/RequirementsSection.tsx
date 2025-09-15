@@ -36,11 +36,11 @@ const RequirementsSection = () => {
           ))}
         </div>
 
-        <div className="text-center">
+        {/* <div className="text-center">
           <Button className="bg-accent hover:bg-accent-dark text-accent-foreground px-8 py-4 text-lg transition-all duration-300 hover:scale-105">
             Get Free Checklist
           </Button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
