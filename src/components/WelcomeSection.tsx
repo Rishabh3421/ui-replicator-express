@@ -30,7 +30,7 @@ const feature = {
 const WelcomeSection = () => {
   const features = [
     "5+ Years Experience",
-    "1000+ Success Cases",
+    "2500+ Success Cases",
     "Personalized Service",
     "100% Transparency",
   ];
