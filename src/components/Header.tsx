@@ -43,7 +43,7 @@ const Header = () => {
                 alt="Easy World Educational Consultant Logo"
                 className="h-16 w-auto transition-all duration-300 group-hover:scale-105"
               />
-              <span className="text-primary font-bold text-xl">Easy World Education Consultants</span>
+              <span className="text-primary font-bold text-xl">Easy World Educational Consultants</span>
             </Link>
 
             {/* Desktop Navigation */}

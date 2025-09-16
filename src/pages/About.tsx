@@ -46,7 +46,7 @@ const About = () => {
               <img
                 src={Watermark} 
                 alt="Watermark logo"
-                className="absolute top-25 left-[40%] w-[50%] h-[50%] object-contain opacity-10 pointer-events-none select-none"
+                className="absolute top-25  left-[40%] w-[50%] h-[50%] object-contain opacity-10 pointer-events-none select-none hidden md:block"
               />
               <div className="text-accent font-medium text-sm">
                 ABOUT EASY WORLD

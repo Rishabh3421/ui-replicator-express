@@ -537,7 +537,7 @@ return (
     )}
 
     {/* Custom scrollbar styles */}
-    <style jsx global>{`
+    <style>{`
       .custom-scrollbar {
         scrollbar-width: thin;
         scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
